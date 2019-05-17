@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Bare - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/navbar.css">
+   
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-success static-top">
@@ -17,24 +24,31 @@
             <div class="input-group col-mb-3">
                 <input type="text" class="form-control" placeholder="Cari produk" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2"><i class="material-icons">search</i></span>
+                    <span class="input-group-text" id="basic-addon2">
+                        <a href="#"><img class="src" src="icon/search.png"></a>
+                    </span>
                 </div>
             </div>
             <div class="collapse navbar-collapse col-mb-7" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav">
                 <li class="nav-item active">
-                <a class="nav-link" href="#">Home
-                    <span class="sr-only">(current)</span>
-                </a>
+                    <a href="#"><img class="lis" src="icon/list.png"></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#">Kategori</a>
+                </li>
+                <li class="nav-item aa">
+                    <a href="#"><img class="cart" src="icon/cart.png"></a>
+                <li class="garis"></li>
+                </li>
+                <li class="foto">
+                
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Services</a>
+                <a class="nav-link" href="#">Akun saya</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link btn" href="#">LOGOUT</a>
                 </li>
             </ul>
             </div>

@@ -1,0 +1,95 @@
+.navbar-brand {
+	font-family: 'century gothic',san-serif;
+	font-weight: bold; 
+}
+.input-group{
+	width: 400px;
+}
+
+.form-control {
+	height: 35px;
+	border-radius: 35px;
+	background-color: #fff;
+	opacity: 0.7;
+	border: 0px;
+}
+
+.input-group-append{
+	margin: 0;
+}
+
+.input-group-text{
+	height: 35px;
+	border-radius: 35px;
+	background-color: #fff;
+	opacity: 0.7;
+	cursor: pointer;
+	border: 0px;
+}
+
+.navbar-nav{
+	width: 100%;
+}
+
+.aa{
+	margin-left: 25%; 
+}
+
+.btn{
+	border-radius: 36px;
+	background-color: #1c8e00;
+	color: #fff;
+	font-weight: bold;
+	margin: 2px;
+	height: 36px;
+	padding: 4px 8px;
+}
+
+.btn:hover{
+	background-color: #177500;
+}
+
+.foto{
+	height: 40px;
+	width: 40px;
+	border-radius: 40px;
+	background-color: #1c8e00;
+	margin-left: 8px;
+}
+
+.foto:hover{
+	background-color: #177500;
+}
+
+.garis{
+	height: 40px;
+	width: 1px;
+	background-color: #177500;
+	margin: 0 10px;
+}
+
+.src{
+	width: 30px;
+	height: 30px;
+	opacity: 0.8;
+}
+
+.src:hover{
+	width: 33px;
+	height: 33px;
+	opacity: 0.5;
+}
+
+.lis{
+	width: 33px;
+	height: 33px;
+	opacity: 0.5;
+	margin: 4px 0 4px 40px;
+}
+
+.cart{
+	width: 33px;
+	height: 33px;
+	margin: 4px;
+	opacity: 0.5;
+}
