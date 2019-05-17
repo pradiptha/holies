@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2019 at 04:50 AM
+-- Generation Time: May 17, 2019 at 06:02 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -78,9 +78,10 @@ CREATE TABLE `tb_kategoriproduk` (
 --
 
 CREATE TABLE `tb_keranjang` (
-  `id_keranjang` int(10) NOT NULL,
-  `id_transaksi` varchar(10) NOT NULL,
-  `status` enum('pending','checkout') NOT NULL
+  `id_keranjang` varchar(10) NOT NULL,
+  `id_produk` varchar(10) NOT NULL,
+  `quantity` int(6) NOT NULL,
+  `total_harga` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -135,14 +136,41 @@ CREATE TABLE `tb_sellerproduk` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_slide`
+--
+
+CREATE TABLE `tb_slide` (
+  `id_slide` varchar(5) NOT NULL,
+  `judul_slide` varchar(30) NOT NULL,
+  `gambar_slide` varchar(30) NOT NULL,
+  `link` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_transaksi`
 --
 
 CREATE TABLE `tb_transaksi` (
-  `id_transaksi` varchar(10) NOT NULL,
-  `id_produk` varchar(10) NOT NULL,
-  `quantity` int(6) NOT NULL,
-  `total_harga` int(10) NOT NULL
+  `id_transaksi` int(10) NOT NULL,
+  `id_keranjang` varchar(10) NOT NULL,
+  `status` enum('pending','checkout') NOT NULL,
+  `tgl_transaksi` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_user`
+--
+
+CREATE TABLE `tb_user` (
+  `id_user` varchar(5) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `foto_profil` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -173,20 +201,6 @@ CREATE TABLE `td_seller` (
   `j_kelamin` enum('pria','wanita') NOT NULL,
   `alamat_seller` varchar(100) NOT NULL,
   `telp_seller` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
-  `id_user` varchar(5) NOT NULL,
-  `username` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `foto_profil` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -224,7 +238,7 @@ ALTER TABLE `tb_kategoriproduk`
 --
 ALTER TABLE `tb_keranjang`
   ADD PRIMARY KEY (`id_keranjang`),
-  ADD KEY `id_transaksi` (`id_transaksi`);
+  ADD KEY `id_barang` (`id_produk`);
 
 --
 -- Indexes for table `tb_pesan`
@@ -258,7 +272,13 @@ ALTER TABLE `tb_sellerproduk`
 --
 ALTER TABLE `tb_transaksi`
   ADD PRIMARY KEY (`id_transaksi`),
-  ADD KEY `id_barang` (`id_produk`);
+  ADD KEY `id_transaksi` (`id_keranjang`);
+
+--
+-- Indexes for table `tb_user`
+--
+ALTER TABLE `tb_user`
+  ADD PRIMARY KEY (`id_user`);
 
 --
 -- Indexes for table `td_admin`
@@ -275,12 +295,6 @@ ALTER TABLE `td_seller`
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_user`);
-
---
 -- Constraints for dumped tables
 --
 
@@ -288,7 +302,7 @@ ALTER TABLE `user`
 -- Constraints for table `tb_customer`
 --
 ALTER TABLE `tb_customer`
-  ADD CONSTRAINT `tb_customer_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
+  ADD CONSTRAINT `tb_customer_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tb_user` (`id_user`);
 
 --
 -- Constraints for table `tb_favorit`
@@ -302,12 +316,6 @@ ALTER TABLE `tb_favorit`
 --
 ALTER TABLE `tb_gmbproduk`
   ADD CONSTRAINT `tb_gmbproduk_ibfk_1` FOREIGN KEY (`id_produk`) REFERENCES `tb_produk` (`id_produk`);
-
---
--- Constraints for table `tb_keranjang`
---
-ALTER TABLE `tb_keranjang`
-  ADD CONSTRAINT `tb_keranjang_ibfk_1` FOREIGN KEY (`id_transaksi`) REFERENCES `tb_transaksi` (`id_transaksi`);
 
 --
 -- Constraints for table `tb_pesan`
@@ -331,16 +339,22 @@ ALTER TABLE `tb_sellerproduk`
   ADD CONSTRAINT `tb_sellerproduk_ibfk_2` FOREIGN KEY (`id_produk`) REFERENCES `tb_produk` (`id_produk`);
 
 --
+-- Constraints for table `tb_transaksi`
+--
+ALTER TABLE `tb_transaksi`
+  ADD CONSTRAINT `tb_transaksi_ibfk_1` FOREIGN KEY (`id_keranjang`) REFERENCES `tb_keranjang` (`id_keranjang`);
+
+--
 -- Constraints for table `td_admin`
 --
 ALTER TABLE `td_admin`
-  ADD CONSTRAINT `td_admin_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
+  ADD CONSTRAINT `td_admin_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tb_user` (`id_user`);
 
 --
 -- Constraints for table `td_seller`
 --
 ALTER TABLE `td_seller`
-  ADD CONSTRAINT `td_seller_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
+  ADD CONSTRAINT `td_seller_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tb_user` (`id_user`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
