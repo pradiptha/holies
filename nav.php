@@ -5,54 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
-  <title>Bare - Start Bootstrap Template</title>
-
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/navbar.css">
-   
+  <link href="vendor/bootstrap/css/bootstrap-modified.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="vendor/holies/css/navbar.css">
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success static-top">
-        <div class="container">
-            <a class="navbar-brand mr-4" href="#">HOLIES</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">HOLIES</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="input-group col-mb-3">
-                <input type="text" class="form-control" placeholder="Cari produk" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2">
-                        <a href="#"><img class="src" src="icon/search.png"></a>
-                    </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="dropdown ml-lg-5">
+                <button type="button" class="btn text-white dropdown-toggle" data-toggle="dropdown">
+                <i class="fas fa-list"></i>
+                    Kategori
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
                 </div>
             </div>
-            <div class="collapse navbar-collapse col-mb-7" id="navbarResponsive">
+            <form class="form-inline my-3 my-lg-0 mr-auto">
+                <input id="navbar-search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search..</button>
+            </form>
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a href="#"><img class="lis" src="icon/list.png"></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Kategori</a>
-                </li>
-                <li class="nav-item aa">
-                    <a href="#"><img class="cart" src="icon/cart.png"></a>
-                <li class="garis"></li>
-                </li>
-                <li class="foto">
-                
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Akun saya</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link btn" href="#">LOGOUT</a>
-                </li>
+            <li class="nav-item active mr-lg-2">
+                <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i><span class="sr-only">(current)</span></a>
+            </li>
+            <div class="vertical-border"></div>
+            <li class="nav-item dropdown account-name ml-lg-2">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="icon/user-circle-solid.svg" alt="" class="nav-img-acc mr-lg-2">
+                name
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
             </ul>
-            </div>
+        </div>
         </div>
     </nav>
+    <div class="content container-fluid my-4">
+        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner rounded">
+                <div class="carousel-item active" data-interval="10000">
+                <img src="img/slide1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-interval="2000">
+                <img src="img/slide2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="img/slide3.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="img/slide4.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
