@@ -12,13 +12,14 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap-modified.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/holies/css/index.css">
 
 </head>
 
 <body>
 
   <!-- Navigation -->
-  <?php include 'nav.php' ?>
+  <?php include 'php/nav.php' ?>
   <!-- Page Content -->
   <div class="container">
     <div class="row">
