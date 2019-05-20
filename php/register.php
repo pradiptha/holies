@@ -1,8 +1,3 @@
-<?php
-// if (isset($_POST['submit'])) {
-//     var_dump($_POST);
-// }
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +12,8 @@
 </head>
 
 <body>
-    <div class="container">
+
+    <div class="gradient-background container">
         <div class="row justify-content-sm-center">
             <div class="register-page rounded my-5 p-5 ">
                 <div class="col-sm-auto">
@@ -40,7 +36,12 @@
                         </div>
                         <div class="form-group">
                             <label for="telp">No. Telp</label>
-                            <input type="text" class="form-control" id="telp" name="telp" placeholder="No. telepon" required>
+                            <input type="text" class="form-control" id="telp" name="telp" placeholder="No.telepon" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat">Alamat</label>
+                            <br>
+                            <textarea name="alamat" rows="4" cols="50" class="form-control" id="alamat" placeholder="Alamat" required></textarea>
                         </div>
                         <div class="form-group">
                             <label for="email">Email address</label>
@@ -54,7 +55,7 @@
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                         </div>
-                        <button type="submit" class="btn btn-success" name="submit">Submit</button>
+                        <button type="submit" class="btn btn-success" name="submit">Submit</button> 
                     </form>
                 </div>
             </div>
@@ -63,3 +64,19 @@
 </body>
 
 </html>
+
+<?php 
+include 'config.php';
+ if (isset($_POST['submit'])) {
+    $nama = mysqli_real_escape_string($conn, $_POST['nama']);
+    $jeniskelamin = mysqli_real_escape_string($conn, $_POST['jenis-kelamin']);
+    $alamat = htmlspecialchars($_POST['alamat']);
+    $telp = mysqli_real_escape_string($conn, $_POST['telp']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+
+    $sql = "INSERT INTO customer (nama_customer,jk,alamat_customer,telp_customer,email) VALUES ('$nama','$jeniskelamin','$alamat','$telp','$email')";
+    if(mysqli_query($conn, $sql)){
+        echo "Records added successfully.";
+    }
+ }
+?>

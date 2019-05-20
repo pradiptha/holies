@@ -6,6 +6,7 @@ session_start();
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -15,6 +16,17 @@ session_start();
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="vendor/holies/css/navbar.css">
+=======
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap-modified.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../vendor/holies/css/navbar.css">
+>>>>>>> 044545a028b2158bf988238cfce510dbc037631e
 
 </head>
 
@@ -73,6 +85,35 @@ session_start();
             </div>
         </div>
     </nav>
+<<<<<<< HEAD
+=======
+    <div class="content container-fluid my-4">
+        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner rounded">
+                <div class="carousel-item active" data-interval="10000">
+                <img src="../img/slide1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-interval="2000">
+                <img src="../img/slide2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="../img/slide3.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="../img/slide4.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+>>>>>>> 044545a028b2158bf988238cfce510dbc037631e
 </body>
 
 </html>
