@@ -1,8 +1,3 @@
-<?php
-// if (isset($_POST['submit'])) {
-//     var_dump($_POST);
-// }
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +12,8 @@
 </head>
 
 <body>
-    <div class="container">
+
+    <div class="gradient-background container">
         <div class="row justify-content-sm-center">
             <div class="register-page rounded my-5 p-5 ">
                 <div class="col-sm-auto">
@@ -40,7 +36,7 @@
                         </div>
                         <div class="form-group">
                             <label for="telp">No. Telp</label>
-                            <input type="text" class="form-control" id="telp" name="telp" placeholder="No. telepon" required>
+                            <input type="text" class="form-control" id="telp" name="telp" placeholder="No.telepon" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email address</label>
@@ -63,3 +59,9 @@
 </body>
 
 </html>
+<?php include 'config.php'
+if (isset($_POST['submit'])) {
+    $nama = mysqli_real_escape_string($link, $_GET['nama']);
+
+}
+?>

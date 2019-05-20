@@ -6,10 +6,10 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap-modified.min.css" rel="stylesheet">
+  <link href="../vendor/bootstrap/css/bootstrap-modified.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="vendor/holies/css/navbar.css">
+  <link rel="stylesheet" type="text/css" href="../vendor/holies/css/navbar.css">
 
 </head>
 <body>
@@ -61,16 +61,16 @@
         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner rounded">
                 <div class="carousel-item active" data-interval="10000">
-                <img src="img/slide1.jpg" class="d-block w-100" alt="...">
+                <img src="../img/slide1.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item" data-interval="2000">
-                <img src="img/slide2.jpg" class="d-block w-100" alt="...">
+                <img src="../img/slide2.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                <img src="img/slide3.jpg" class="d-block w-100" alt="...">
+                <img src="../img/slide3.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                <img src="img/slide4.jpg" class="d-block w-100" alt="...">
+                <img src="../img/slide4.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
