@@ -1,0 +1,15 @@
+/* * {
+    border: 1px solid red !important;
+} */
+
+body {
+    background-color: #f5f5f5 !important;
+}
+
+.register-page {
+    background-color: #ffffff;
+}
+
+.register-logo {
+    width: 250px;
+}
