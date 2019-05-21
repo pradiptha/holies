@@ -60,17 +60,17 @@
         <div class="col-10 info-panel">
           <div class="row">
             <div class="col-sm">
-              <img src="img/employee.png" alt="Employee" class="img-fluid float-left">
+              <img src="../img/buy.png" alt="Employee" class="img-fluid float-left icn">
               <h4>Sell</h4>
               <p>Jual Hasil Peternakan</p>
             </div>
             <div class="col-lg">
-              <img src="img/hires.png" alt="HiRes" class="img-fluid float-left">
+              <img src="../img/sell.png" alt="HiRes" class="img-fluid float-left icn">
               <h4>Buy</h4>
               <p>Beli Segala Keperluan Peternakan</p>
             </div>
             <div class="col-lg">
-              <img src="img/security.png" alt="Security" class="img-fluid float-left">
+              <img src="../img/ask.png" alt="Security" class="img-fluid float-left icn">
               <h4>Ask</h4>
               <p>Tanya Kepada Ahlinya di Holies</p>
             </div>
@@ -119,7 +119,9 @@
 
     </div>
     <!-- akhir container -->
-
+    <div  class="footer">
+      <p>2019 | Created with &hearts; by HOLIES INDONESIA</p>
+    </div>
 
 
 

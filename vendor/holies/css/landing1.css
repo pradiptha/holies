@@ -1,6 +1,10 @@
 
 
 /* Navbar */
+.navbar{
+    z-index: 999;
+}
+
 .navbar-brand {
     font: 32px Viga;
 }
@@ -12,7 +16,6 @@
     background-size: cover;
     height: 540px;
     position: relative;
-    z-index: -1;
 }
 
 .jumbotron::after {
@@ -50,6 +53,12 @@
     padding: 15px;
     border-radius: 40px;
     cursor: pointer;
+}
+
+.btnjoin:hover{
+    background-color: white;
+    color: #2653d4;
+    text-decoration: none;
 }
 
 
@@ -151,6 +160,26 @@
     margin-right: 100px;
     border-radius: 50%;
 }
+
+.icn{
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+}
+/*footer*/
+.footer{
+    height: 50px;
+    width: 100%;
+    background-color: #2653d4;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.footer p{
+    text-align: center;
+}
+
+
 
 /* Utility */
 .tombol {
