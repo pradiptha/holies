@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +16,9 @@
         <div class="row justify-content-sm-center">
             <div class="register-page rounded my-5 p-5 ">
                 <div class="col-sm-auto">
-                    <img src="../vendor/holies/img/holies-text.png" class="register-logo" alt="">
+                    <div class="register-logo">
+                        <img src="../vendor/holies/img/holies-text.png" alt="">
+                    </div>
                     <form method="post" action="">
                         <div class="form-group">
                             <label for="nama">Nama</label>
@@ -26,12 +27,12 @@
                         <div class="form-group">
                             <label for="jeniskelamin" class="d-block">Jenis Kelamin</label>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline1" name="jenis-kelamin" value="Laki-laki" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadioInline1">Laki-laki</label>
+                                <input type="radio" id="customRadioInline1" name="jenis-kelamin" value="Pria" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadioInline1">Pria</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline2" name="jenis-kelamin" value="Perempuan" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadioInline2">Perempuan</label>
+                                <input type="radio" id="customRadioInline2" name="jenis-kelamin" value="Wanita" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadioInline2">Wanita</label>
                             </div>
                         </div>
                         <div class="form-group">
@@ -55,7 +56,7 @@
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                         </div>
-                        <button type="submit" class="btn btn-success" name="submit">Submit</button> 
+                        <button type="submit" class="btn btn-success" name="submit">Submit</button>
                     </form>
                 </div>
             </div>
@@ -65,18 +66,19 @@
 
 </html>
 
-<?php 
+<?php
 include 'config.php';
- if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
     $nama = mysqli_real_escape_string($conn, $_POST['nama']);
     $jeniskelamin = mysqli_real_escape_string($conn, $_POST['jenis-kelamin']);
     $alamat = htmlspecialchars($_POST['alamat']);
     $telp = mysqli_real_escape_string($conn, $_POST['telp']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
+    var_dump($jeniskelamin);
 
     $sql = "INSERT INTO customer (nama_customer,jk,alamat_customer,telp_customer,email) VALUES ('$nama','$jeniskelamin','$alamat','$telp','$email')";
-    if(mysqli_query($conn, $sql)){
+    if (mysqli_query($conn, $sql)) {
         echo "Records added successfully.";
     }
- }
+}
 ?>
