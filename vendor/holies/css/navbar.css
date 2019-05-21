@@ -1,14 +1,17 @@
-#navbar-search{
+#navbar-search {
     width: 300px;
 }
-.vertical-border{
-    border-left: 1px solid rgba(255,255,255,.5);
+
+.vertical-border {
+    border-left: 1px solid rgba(255, 255, 255, .5);
 }
-.nav-img-acc{
+
+.nav-img-acc img {
     width: 25px;
     height: 25px;
 }
-.carousel-inner .carousel-item img{
+
+.carousel-inner .carousel-item img {
     height: 300px;
     object-fit: cover;
 }
