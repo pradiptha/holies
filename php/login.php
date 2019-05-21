@@ -35,12 +35,36 @@
                             <input type="checkbox" class="form-check-input" id="remember" name="remember" value="true">
                             <label class="form-check-label" for="remember">Remember Me!</label>
                         </div>
-                        <button type="submit" class="btn btn-success" name="submit">Submit</button>
+                        <button data-target="#loginfailed" type="submit" class="btn btn-success" name="submit">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</body>
 
+</body>
 </html>
+ <?php
+    session_start();
+    include "config.php";
+
+    if(isset($_POST['submit']))
+    {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $sql = "SELECT * FROM user where username='$username' AND password = '$password'";
+
+        $result=mysqli_query($conn,$sql);
+
+        if (mysqli_fetch_assoc($result))
+        {
+            $_SESSION['username']=$_POST['username'];
+            header("location: home.php");
+        }
+        else
+        {
+            header("location: login.php");
+        }
+    }
+ ?>
