@@ -1,0 +1,167 @@
+.cover {
+	margin: auto;
+	background-image: url("../../../img/hend.jpg");
+	background-position: center;
+	width: 100%;
+	height: 500px;
+	display: table;
+	background-size: cover;
+}
+
+.shadow{
+	height: 500px;
+	width: 100%;
+	background: -moz-linear-gradient(#0000004d, #000000e6);
+	position: absolute;
+	align-content: center;
+}
+
+.shadow .container{
+	margin-top: 20px; 
+}
+
+.holies{
+	color: #fff;
+	font-weight: bold;
+	font-size: 200%;
+	margin:4px auto;
+}
+
+.list-group-item{
+	background-color: #fff0;
+	border: 0;
+	color: #fff;
+	font-size: 125%;
+	cursor: pointer;
+}
+
+.loginbutton {
+	color: #fff;
+	border-radius: 90px;
+	background-color: #0fff00;
+	height: 40px;
+	width: 98px;
+	padding: 3px 17px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.loginbutton:hover{
+	color: #009311;
+	background-color: #bdffb9; 
+}
+
+.isi{
+	height: 200px;
+}
+
+.isi .container{
+	margin-top: 80px;
+}
+
+.conten{
+	color: #fff;
+}
+
+.conten h1{
+	text-align: center;
+	font-size: 300%;
+}
+
+.joinbutton{
+	height: 50px;
+	width: 150px;
+	background-color: #0fff00;
+	margin: 5px auto;
+	border-radius: 50px;
+	padding: 9px 26px;
+	cursor: pointer;
+	color: #fff;
+}
+
+.joinbutton:hover{
+	color: #009311;
+	background-color: #bdffb9; 
+}
+
+.joinbutton h2{
+	font-size: 150%;
+	font-weight: bold;
+}
+
+.deskripsi{
+	margin-top: 100px; 
+}
+
+.col-md-6 h2{
+	text-align: right;
+}
+
+.col-md-6 p{
+	text-align: right;
+}
+
+.gambar{
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+}
+
+.lingkaran{
+	height: 250px;
+	width: 250px;
+	border-radius: 250px;
+	background-image: url("../../../img/logo.png");
+	background-position: center;
+	display: table;
+	background-size: cover;
+	border:3px solid #0fff00;
+}
+
+.testimoni{
+	margin-top: 100px;
+}
+
+.testi{
+	width: 100%;
+	height: 200px;
+	background-color: white;
+	border-radius: 10px;
+	border:3px solid #0fff00;
+}
+
+.testi{
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	text-align: justify;
+}
+
+.pp{
+	height: 100px;
+	width: 100px;
+	border-radius: 100px;
+	background-image: url("../../../img/mark.png");
+	background-position: center;
+	display: table;
+	background-size: cover;
+	border:3px #eaeaea;
+	margin: 3px;
+}
+
+.komen{
+	font-size: 12px;
+	font-style: italic;
+	padding: 10px;
+}
+
+.footer{
+	margin-top: 20px;
+	width: 100%;
+	height: 55px;
+	background-color: #eaeaea;
+}
