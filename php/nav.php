@@ -14,7 +14,7 @@ session_start();
     <link href="../vendor/bootstrap/css/bootstrap-modified.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../vendor/holies/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="vendor/holies/css/navbar.css">
 
 </head>
 
@@ -43,21 +43,21 @@ session_start();
                     <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search..</button>
                 </form>
                 <ul class="navbar-nav">
-                    <?php if (isset($_SESSION['login'])) : ?>
+                    <?php if (isset($_SESSION['username'])) : ?>
                         <li class="nav-item active mr-lg-2">
                             <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i><span class="sr-only">(current)</span></a>
                         </li>
                         <div class="vertical-border"></div>
                         <li class="nav-item dropdown account-name ml-lg-2">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle text-white nav-img-acc" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img src="icon/user-circle-solid.svg" alt="" class="nav-img-acc mr-lg-2">
-                                name
+                                <?= $_SESSION['username'] ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="#">Favorites</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" href="#">Logout</a>
                             </div>
                         </li>
                     <?php else : ?>

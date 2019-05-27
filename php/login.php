@@ -43,28 +43,25 @@
     </div>
 
 </body>
+
 </html>
- <?php
-    session_start();
-    include "config.php";
+<?php
+session_start();
+include "config.php";
 
-    if(isset($_POST['submit']))
-    {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-        $sql = "SELECT * FROM user where username='$username' AND password = '$password'";
+    $sql = "SELECT * FROM user where username='$username' AND password = '$password'";
 
-        $result=mysqli_query($conn,$sql);
+    $result = mysqli_query($conn, $sql);
 
-        if (mysqli_fetch_assoc($result))
-        {
-            $_SESSION['username']=$_POST['username'];
-            header("location: home.php");
-        }
-        else
-        {
-            header("location: login.php");
-        }
+    if (mysqli_fetch_assoc($result)) {
+        $_SESSION['username'] = $_POST['username'];
+        header("location: home.php");
+    } else {
+        header("location: ../index.php");
     }
- ?>
+}
+?>
