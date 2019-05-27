@@ -27,11 +27,11 @@
                         <div class="form-group">
                             <label for="jeniskelamin" class="d-block">Jenis Kelamin</label>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline1" name="jenis-kelamin" value="Pria" class="custom-control-input">
+                                <input type="radio" id="customRadioInline1" name="jenis-kelamin" value="pria" class="custom-control-input">
                                 <label class="custom-control-label" for="customRadioInline1">Pria</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline2" name="jenis-kelamin" value="Wanita" class="custom-control-input">
+                                <input type="radio" id="customRadioInline2" name="jenis-kelamin" value="wanita" class="custom-control-input">
                                 <label class="custom-control-label" for="customRadioInline2">Wanita</label>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
 </body>
 
 </html>
-
+<!-- foto profil tak apus di database ingetin ya -->
 <?php
 include 'config.php';
 if (isset($_POST['submit'])) {
@@ -74,11 +74,17 @@ if (isset($_POST['submit'])) {
     $alamat = htmlspecialchars($_POST['alamat']);
     $telp = mysqli_real_escape_string($conn, $_POST['telp']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    var_dump($jeniskelamin);
+    $user = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-    $sql = "INSERT INTO customer (nama_customer,jk,alamat_customer,telp_customer,email) VALUES ('$nama','$jeniskelamin','$alamat','$telp','$email')";
+    $sql="INSERT INTO user(username,password,tingkatan) VALUES ('$user','$password','customer') ";
     if (mysqli_query($conn, $sql)) {
-        echo "Records added successfully.";
+        $temp =mysqli_fetch_assoc(mysqli_query($conn,"SELECT id_user FROM user ORDER BY id_user  DESC LIMIT 1"));
+        $number= $temp["id_user"];
+        $sql1= "INSERT INTO detail_user(id_user,nama,jk,alamat,telp,email) VALUES ('$number','$nama','$jeniskelamin','$alamat','$telp','$email')";
+        mysqli_query($conn, $sql1);
+
     }
+    
 }
 ?>
