@@ -57,6 +57,7 @@
                             <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                         </div>
                         <button type="submit" class="btn btn-success" name="submit">Submit</button>
+                        <a href="login.php"><button type="button" class="btn btn-success" style="float: right">Login</button></a>
                     </form>
                 </div>
             </div>
@@ -83,7 +84,7 @@ if (isset($_POST['submit'])) {
         $number= $temp["id_user"];
         $sql1= "INSERT INTO detail_user(id_user,nama,jk,alamat,telp,email) VALUES ('$number','$nama','$jeniskelamin','$alamat','$telp','$email')";
         mysqli_query($conn, $sql1);
-
+        header("login.php");
     }
     
 }

@@ -20,15 +20,9 @@
 
   <!-- Navigation -->
   <?php include 'php/nav.php' ?>
-  <!-- Page Content -->
-  <!-- <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-      </div>
-    </div>
-  </div> -->
+  <!-- Carousel -->
   <div class="content container-fluid my-4">
-    <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleInterval" class="carousel slide" style="width: 50%; margin-left: auto; margin-right: auto;" data-ride="carousel">
       <div class="carousel-inner rounded">
         <div class="carousel-item active" data-interval="10000">
           <img src="img/slide1.jpg" class="d-block w-100" alt="...">
