@@ -14,7 +14,7 @@ session_start();
     <link href="../vendor/bootstrap/css/bootstrap-modified.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="vendor/holies/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/holies/css/navbar.css">
 </head>
 
 <body>
@@ -49,23 +49,23 @@ session_start();
                         <div class="vertical-border"></div>
                         <li class="nav-item dropdown account-name ml-lg-2">
                             <a class="nav-link dropdown-toggle text-white nav-img-acc" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="icon/user-circle-solid.svg" alt="" class="nav-img-acc mr-lg-2">
+                                <img src="../icon/user-circle-solid.svg" alt="" class="nav-img-acc mr-lg-2">
                                 <?= $_SESSION['username'] ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">Profile</a>
                                 <a class="dropdown-item" href="#">Favorites</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Logout</a>
+                                <a class="dropdown-item" href="logout.php">Logout</a>
                             </div>
                         </li>
                     <?php else : ?>
                         <li class="nav-item active mr-lg-2">
-                            <a class="nav-link" href="php/login.php">Login</a>
+                            <a class="nav-link" href="login.php">Login</a>
                         </li>
                         <div class="vertical-border"></div>
                         <li class="nav-item mr-lg-2">
-                            <a class="nav-link" href="php/register.php">Register</a>
+                            <a class="nav-link" href="register.php">Register</a>
                         </li>
                     <?php endif ?>
                 </ul>

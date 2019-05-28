@@ -47,7 +47,7 @@
 </html>
 <?php
 session_start();
-include "config.php";
+include "../php/config.php";
 
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
@@ -56,12 +56,20 @@ if (isset($_POST['submit'])) {
     $sql = "SELECT * FROM user where username='$username' AND password = '$password'";
 
     $result = mysqli_query($conn, $sql);
-
-    if (mysqli_fetch_assoc($result)) {
+    $data = mysqli_fetch_assoc($result);
+    $tingkatan = $data["tingkatan"];
+    if ($data) {
         $_SESSION['username'] = $_POST['username'];
-        header("location: home.php");
+        // echo $tingkatan;
+        if ($tingkatan === "customer") {
+            // echo "customer";
+            header("location: index.php");
+        } else if ($tingkatan === "seller") {
+            // echo "seller";
+            header("location: ../seller/index.php");
+        }
     } else {
-        header("location: ../index.php");
+        // header("location: login.php");
     }
 }
 ?>
