@@ -59,7 +59,7 @@
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batalkan</button>
+                        <a href="akunsaya.php"><button type="button" class="btn btn-secondary" data-dismiss="modal">Batalkan</button></a>
                         <button type="button" class="btn btn-success">Simpan</button>
                     </div>
                 </form>

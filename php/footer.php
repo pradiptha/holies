@@ -24,11 +24,11 @@
 </head>
 <body>
 	<footer class="footer-top">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-sm-2 segment-one">
+		<div class="container">
+			<div class="row ">
+				<div class="col-md-3 segment-one ">
 					<div class="f1">
-						<h3><a href="#" style="color:#02A161;">H O L I E S</a></h3>
+						<h3><a href="#" class="text-success">H O L I E S</a></h3>
 					</div>
 					<div class="f2">
 						<ul style="list-style-type: none;">
@@ -38,41 +38,35 @@
 							<li><a class="text-white" href="../php/faq.php"> FAQ</a></li>
 						</ul>		
 					</div>
-					<div class="vl">
-					</div>
 				</div>
-				<div class="col-sm-7 segment-two ml-5" >
-					<p class="text-center" style="color:#02A161;"> Temukan kami disini </p> <div class="seluruh" style="">
-						<div class="row">
-						<div class="col-3 justify-content-center">
+				<div class="col-md-7 segment-two" >
+					<p class="text-center text-success font-weight-bold"> Temukan kami disini </p>
+					<div class="row justify-content-center">
+						<div class="col-3 ">
 							<img style="width :20%" src="../img/fb.png" class="rounded mx-auto d-block">
 							<div class="media-body">
-								<p class="text-center"><a href="#" style="color:#02A161;">Facebook</a></p>
+								<p class="text-center"><a href="#" class="text-success">Facebook</a></p>
 							</div>
 						</div>
 						<div class="col-3">
 							<img style="width :20%" src="../img/ig.png" class="rounded mx-auto d-block">
 							<div class="media-body">
-								<p class="text-center"><a href="#" style="color:#02A161;">Instagram</a></p> 
+								<p class="text-center"><a href="#" class="text-success">Instagram</a></p> 
 							</div>
 						</div>
 						<div class="col-3">
 							<img style="width :20%" src="../img/tw.png" class="rounded mx-auto d-block">
 							<div class="media-body">
-								<p class="text-center"><a href="#" style="color:#02A161;">Twitter</a></p> 
+								<p class="text-center"><a href="#" class="text-success">Twitter</a></p> 
 							</div>	
 						</div>
 					</div>
-					</div>
-						
 				</div>	
 			</div>
 		</div>
 	</footer>
-	<footer class="footer-bottom">
-		<div class="f3">
-			<p class="font-weight-light text-center text-white">2019.All Rights Reserverd by PT. Holies Indonesia </p>
-		</div>
+	<footer class="bg-success p-1">
+		<p class="font-weight-regular text-center text-white mt-3">2019.All Rights Reserverd by PT. Holies Indonesia </p>
 	</footer>
 	
 </body>
