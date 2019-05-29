@@ -17,7 +17,6 @@
 <body>
 
     <?php include "dashboard.php" ?>
-
     	<div class="jual_barang p-3">
     		<h1>Jual Barang</h1>
     		<div class="shadow mb-5 bg-white rounded data_barang p-3">
