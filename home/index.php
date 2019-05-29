@@ -81,7 +81,7 @@
       </div>
     </div>
   </div>
-  <div class="container" style="margin-top: 80px;">
+  <div class="mb-5 mt-5 container ">
     <div class="row">
       <div class="col-lg-3">
         <div class="card shadow-sm">
