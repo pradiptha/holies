@@ -15,27 +15,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-        <div class="container-fluid">
-            <a class="navbar-brand text-white" href="#">HOLIES</a>
-    </nav>
-    </div>
-    <div class="layer">
-    	<div class="shadow mb-5 bg-white rounded dashboard">
-    		<div class="text-center">
-				<img src="../img/mark.png" class="PP" alt="PP">
-			</div>
-			<div class="username"><h1>SIAPA SAYA</h1></div>
-			<i class="fas fa-edit d-flex justify-content-center editname">Edit</i>
-			<div class="list-group">
-				<button type="button" class="list-group-item list-group-item-action text-center bg-success">JUAL BARANG</button>
-				<button type="button" class="list-group-item list-group-item-action text-center">DAFTAR BARANG</button>
-				<button type="button" class="list-group-item list-group-item-action text-center">LAPAK SAYA</button>
-			</div>
-			<div class="d-flex justify-content-center p-3">
-				<button type="button" class="btn btn-success">LOGOUT</button>
-			</div>
-    	</div>
+
+    <?php include "dashboard.php" ?>
+
     	<div class="jual_barang p-3">
     		<h1>Jual Barang</h1>
     		<div class="shadow mb-5 bg-white rounded data_barang p-3">
