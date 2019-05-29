@@ -1,36 +1,36 @@
-<?php
-session_start();
-if (isset($_SESSION['username'])) {
-  header('Location: home/index.php');
-}
-?>
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-modified.min.css">
-  <!-- Additional CSS -->
-  <link rel="stylesheet" type="text/css" href="vendor/holies/css/navbar.css">
-  <link rel="stylesheet" href="vendor/holies/css/landing1.css">
-  <!-- Fonts & Icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Viga">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-  <title>HOLIES | House of Lifestock</title>
+  <title>HOLIES - House of Livestock</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap-modified.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/holies/css/index.css">
 
 </head>
 
 <body>
 
+<<<<<<< HEAD
+  <!-- Navigation -->
+  <?php include 'php/nav.php' ?>
+  <!-- Carousel -->
+  <div class="content container-fluid my-4">
+    <div id="carouselExampleInterval" class="carousel slide" style="width: 50%; margin-left: auto; margin-right: auto;" data-ride="carousel">
+      <div class="carousel-inner rounded">
+        <div class="carousel-item active" data-interval="10000">
+          <img src="img/slide1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-interval="2000">
+          <img src="img/slide2.jpg" class="d-block w-100" alt="...">
+=======
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light">
@@ -109,19 +109,26 @@ if (isset($_SESSION['username'])) {
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <p>"Bergabung dengan holies memberikan saya banyak pengalaman berharga"</p>
+>>>>>>> d50d8cf8efd6db8a95f7b4f62c6b58a65b1c95ac
+        </div>
+        <div class="carousel-item">
+          <img src="img/slide3.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="img/slide4.jpg" class="d-block w-100" alt="...">
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-6 justify-content-center d-flex">
-          <img src="img/mark.png" alt="Testimonial 2" class="img-main">
-        </div>
-      </div>
-      <div class="row justify-content-center info-text">
-        <div class="col-lg text-center">
-          <h5>Mark</h5>
-          <p>Seller</p>
-        </div>
-      </div>
+<<<<<<< HEAD
+      <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+=======
     </section>
     <!-- akhir Testimonial -->
 
@@ -130,17 +137,13 @@ if (isset($_SESSION['username'])) {
   <!-- akhir container -->
   <div class="footer bg-success">
     <p>2019 | Created with &hearts; by HOLIES INDONESIA</p>
+>>>>>>> d50d8cf8efd6db8a95f7b4f62c6b58a65b1c95ac
   </div>
 
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.slim.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-
-
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 
 </html>
