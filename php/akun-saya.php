@@ -40,7 +40,6 @@
 							</tr>
 						</table>											
 					</div>
-					<i class=" m-1 fas fa-pencil-alt text-success float-right"></i>
 					<p class="m-1 float-right">Edit Profil</p>	
 				</div>
 				<div class="shadow mb-3 bg-white rounded data-diri p-3">
