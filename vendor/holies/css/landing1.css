@@ -12,7 +12,7 @@
 .jumbotron {
     background: url(../../../img/hend.jpg);
     background-size: cover;
-    height: 540px;
+    height: 100vh !important;
     position: relative;
 }
 

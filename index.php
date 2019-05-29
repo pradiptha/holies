@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (isset($_SESSION['username'])) {
+  header('Location: home/index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,25 +20,14 @@
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap-modified.min.css" rel="stylesheet">
   <link rel="stylesheet" href="vendor/holies/css/index.css">
+  <link rel="stylesheet" type="text/css" href="vendor/holies/css/navbar.css">
+  <link rel="stylesheet" href="vendor/holies/css/landing1.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
 
 </head>
 
 <body>
-
-<<<<<<< HEAD
-  <!-- Navigation -->
-  <?php include 'php/nav.php' ?>
-  <!-- Carousel -->
-  <div class="content container-fluid my-4">
-    <div id="carouselExampleInterval" class="carousel slide" style="width: 50%; margin-left: auto; margin-right: auto;" data-ride="carousel">
-      <div class="carousel-inner rounded">
-        <div class="carousel-item active" data-interval="10000">
-          <img src="img/slide1.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item" data-interval="2000">
-          <img src="img/slide2.jpg" class="d-block w-100" alt="...">
-=======
-
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
@@ -59,7 +55,6 @@
     </div>
   </div>
   <!-- akhir Jumbotron -->
-
 
   <!-- container -->
   <div class="container">
@@ -109,26 +104,8 @@
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <p>"Bergabung dengan holies memberikan saya banyak pengalaman berharga"</p>
->>>>>>> d50d8cf8efd6db8a95f7b4f62c6b58a65b1c95ac
-        </div>
-        <div class="carousel-item">
-          <img src="img/slide3.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="img/slide4.jpg" class="d-block w-100" alt="...">
         </div>
       </div>
-<<<<<<< HEAD
-      <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-=======
     </section>
     <!-- akhir Testimonial -->
 
@@ -137,7 +114,6 @@
   <!-- akhir container -->
   <div class="footer bg-success">
     <p>2019 | Created with &hearts; by HOLIES INDONESIA</p>
->>>>>>> d50d8cf8efd6db8a95f7b4f62c6b58a65b1c95ac
   </div>
 
   <!-- Bootstrap core JavaScript -->

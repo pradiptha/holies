@@ -62,18 +62,18 @@
 
         <div class="col-lg-4 text-center">
           <img class="shadow imgkategori" src="../img/pakan.png">
-          <div class="media-body"style="font-size: 20px">
+          <div class="media-body" style="font-size: 20px">
             Pakan
           </div>
         </div>
         <div class="col-lg-4 text-center">
-          <img class="shadow imgkategori"src="../img/ternak.png">
+          <img class="shadow imgkategori" src="../img/ternak.png">
           <div class="media-body" style="font-size: 20px">
             Ternak
           </div>
         </div>
         <div class="col-lg-4 text-center">
-          <img class="shadow imgkategori"src="../img/alat.png">
+          <img class="shadow imgkategori" src="../img/alat.png">
           <div class="media-body" style="font-size: 20px">
             Alat
           </div>
@@ -87,7 +87,7 @@
         <div class="card shadow-sm">
           <img src="../img/anak_kerbau.jpg" class="card-img-top d-block w-100" alt="...">
           <div class="card-body">
-              <h5 class="card-title">Anak Sapi Cilendek</h5>
+            <h5 class="card-title">Anak Sapi Cilendek</h5>
             <div class="row" style="padding-left: 10px">
               <p style="margin-top: 10px; width: 25px;">Rp.</p>
               <h2 class="text-success">4000</h2>
@@ -105,7 +105,7 @@
         <div class="card shadow-sm">
           <img src="../img/telur_ayam.jpg" class="card-img-top d-block w-100" alt="...">
           <div class="card-body">
-              <h5 class="card-title">Telur ayam kampung</h5>
+            <h5 class="card-title">Telur ayam kampung</h5>
             <div class="row" style="padding-left: 10px">
               <p style="margin-top: 10px; width: 25px;">Rp.</p>
               <h2 class="text-success">4000</h2>
@@ -123,7 +123,7 @@
         <div class="card shadow-sm">
           <img src="../img/telur_bebek.jpg" class="card-img-top d-block w-100" alt="...">
           <div class="card-body">
-              <h5 class="card-title">Telur Bebek tadi pagi</h5>
+            <h5 class="card-title">Telur Bebek tadi pagi</h5>
             <div class="row" style="padding-left: 10px">
               <p style="margin-top: 10px; width: 25px;">Rp.</p>
               <h2 class="text-success">4000</h2>
@@ -141,7 +141,7 @@
         <div class="card shadow-sm">
           <img src="../img/keju.jpg" class="card-img-top d-block w-100" alt="...">
           <div class="card-body">
-              <h5 class="card-title">Keju asal Cibaduyut</h5>
+            <h5 class="card-title">Keju asal Cibaduyut</h5>
             <div class="row" style="padding-left: 10px">
               <p style="margin-top: 10px; width: 25px;">Rp.</p>
               <h2 class="text-success">40000</h2>
@@ -157,7 +157,9 @@
       </div>
     </div>
   </div>
-  <?php include "../php/footer.php" ?>
+  <?php
+  // include "../php/footer.php"
+  ?>
   <!-- Bootstrap core JavaScript -->
   <script src="../vendor/jquery/jquery.slim.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

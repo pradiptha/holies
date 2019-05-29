@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="dropdown ml-lg-5">
                     <button type="button" class="btn text-white dropdown-toggle" data-toggle="dropdown">
-                        <i class="fas fa-list"></i>
+                        <!-- <i class="fas fa-list"></i> -->
                         Kategori
                     </button>
                     <div class="dropdown-menu">

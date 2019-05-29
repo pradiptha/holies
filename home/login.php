@@ -36,11 +36,12 @@
                             <label class="form-check-label" for="remember">Remember Me!</label>
                         </div>
                         <button data-target="#loginfailed" type="submit" class="btn btn-success" name="submit">Submit</button>
-                        <div class="form-group form-check">
-                            <label class="form-check-label" style="margin-top: 10px; margin-left: 40px">Belum punya akun?</label>
-                            <br>
-                            <label class="form-check-label" style="margin-top: 10px; margin-left: 55px"><a href="register.php">Register disini</a></label>
+                        <!-- <div class="form-group form-check"> -->
+                        <div class="mt-5 mx-auto text-center text-decoration-none mb-n4">
+                            <small class="form-check-label" style="">Belum punya akun?</small>
+                            <small class="form-check-label" style=""><a href="register.php">Register disini</a></small>
                         </div>
+                        <!-- </div> -->
 
                     </form>
                 </div>
