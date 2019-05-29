@@ -43,20 +43,28 @@
                 </form>
                 <ul class="navbar-nav">
                     <?php if (isset($_SESSION['username'])) : ?>
-                        <li class="nav-item active mr-lg-2">
-                            <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i><span class="sr-only">(current)</span></a>
-                        </li>
-                        <div class="vertical-border"></div>
+                        <?php if ($_SESSION['type'] === 'customer') : ?>
+                            <li class="nav-item active mr-lg-2">
+                                <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i><span class="sr-only">(current)</span></a>
+                            </li>
+                            <div class="vertical-border"></div>
+                        <?php endif ?>
                         <li class="nav-item dropdown account-name ml-lg-2">
                             <a class="nav-link dropdown-toggle text-white nav-img-acc" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img src="../icon/user-circle-solid.svg" alt="" class="nav-img-acc mr-lg-2">
                                 <?= $_SESSION['username'] ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="profile.php">Profile</a>
-                                <a class="dropdown-item" href="#">Favorites</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="logout.php">Logout</a>
+                                <?php if ($_SESSION['type'] === 'customer') : ?>
+                                    <a class="dropdown-item" href="profile.php">Profile</a>
+                                    <a class="dropdown-item" href="#">Favorites</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="logout.php">Logout</a>
+                                <?php elseif ($_SESSION['type'] === 'seller') : ?>
+                                    <a class="dropdown-item" href="../seller/index.php">Profile</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="logout.php">Logout</a>
+                                <?php endif ?>
                             </div>
                         </li>
                     <?php else : ?>

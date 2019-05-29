@@ -1,19 +1,18 @@
-
-body,html{
+body,
+html {
 	height: 100%;
 	width: 100%;
 	background-color: #eaeaea;
 }
 
 .register-logo {
-    width: 120px;
-    margin: 0 auto;
+	width: 120px;
+	margin: 0 auto;
 }
 
-.dashboard{
+.dashboard {
 	background-color: #fff;
 	width: 250px;
-	height: 420px;
 	position: relative;
 	border-radius: 0;
 	padding: 20px 0;
@@ -26,33 +25,33 @@ body,html{
 	border-radius: 50%;
 }
 
-.username h1{
+.username h1 {
 	font-size: 120%;
 	color: #000;
 	text-align: center;
 	padding: 10px;
 }
 
-.editname{
+.editname {
 	color: green;
 	padding-bottom: 20px;
 	cursor: pointer;
 }
 
-.jual_barang{
+.jual_barang {
 	width: 60%;
 	height: 100%;
 	float: left;
 }
 
-.gambar{
+.gambar {
 	float: left;
 	margin-top: 55px;
 	width: 20%;
 	height: 100%;
 }
 
-.nav{
+.nav {
 	width: 300px;
 	margin-left: 80%;
 }

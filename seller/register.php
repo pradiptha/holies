@@ -14,7 +14,7 @@
 
     <div class="gradient-background container">
         <div class="row justify-content-sm-center">
-            <div class="register-page rounded my-5 p-5 ">
+            <div class="register-page shadow rounded my-5 p-5 ">
                 <div class="col-sm-auto">
                     <h6 class="text-center">Register as Seller</h6>
                     <div class="register-logo">
@@ -84,6 +84,9 @@ if (isset($_POST['submit'])) {
         $number = $temp["id_user"];
         $sql1 = "INSERT INTO detail_user(id_user,nama,jk,alamat,telp,email) VALUES ('$number','$nama','$jeniskelamin','$alamat','$telp','$email')";
         mysqli_query($conn, $sql1);
+        $sql2 = "INSERT INTO seller(id_user) VALUES ('$number')";
+        mysqli_query($conn, $sql2);
+        echo "sukses";
     }
 }
 ?>

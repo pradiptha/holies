@@ -19,7 +19,7 @@
 <body>
     <div class="container">
         <div class="row justify-content-sm-center">
-            <div class="register-page rounded my-5 p-5 ">
+            <div class="register-page rounded my-5 p-5 shadow">
                 <div class="col-sm-auto">
                     <img src="../vendor/holies/img/holies-text.png" class="register-logo" alt="">
                     <form method="post" action="">
@@ -63,9 +63,11 @@ if (isset($_POST['submit'])) {
         // echo $tingkatan;
         if ($tingkatan === "customer") {
             // echo "customer";
+            $_SESSION['type'] = $tingkatan;
             header("location: index.php");
         } else if ($tingkatan === "seller") {
             // echo "seller";
+            $_SESSION['type'] = $tingkatan;
             header("location: ../seller/index.php");
         }
     } else {
