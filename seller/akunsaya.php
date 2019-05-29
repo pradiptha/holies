@@ -35,7 +35,7 @@
 					</tr>
 				</table>											
 			</div>
-			<a href="#"><i class="fas fa-edit fa-2x text-success float-right m-2"></i></a>
+			<a href="editprofil.php"><i class="fas fa-edit fa-2x text-success float-right m-2"></i></a>
 		</div>
 	</div>
 </body>

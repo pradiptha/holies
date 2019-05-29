@@ -35,10 +35,10 @@ session_start();
         </div>
         <div class="username"><h1>SIAPA SAYA</h1></div>
         <div class="list-group">
-            <button type="button" class="list-group-item list-group-item-action text-center">Home</button>
-            <button type="button" class="list-group-item list-group-item-action text-center">Jual Barang</button>
-            <button type="button" class="list-group-item list-group-item-action text-center">Akun Saya</button>
-            <button type="button" class="list-group-item list-group-item-action text-center">Pesan</button>
+            <a href="index.php"><button type="button" class="list-group-item list-group-item-action text-center">Home</button></a>
+            <a href="jual.php"><button type="button" class="list-group-item list-group-item-action text-center">Jual Barang</button></a>
+            <a href="akunsaya.php"><button type="button" class="list-group-item list-group-item-action text-center">Akun Saya</button></a>
+            <a href="#"><button type="button" class="list-group-item list-group-item-action text-center">Pesan</button></a>
         </div>
         <div class="d-flex justify-content-center p-3">
             <button type="button" class="btn btn-success">LOGOUT</button>
