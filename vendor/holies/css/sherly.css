@@ -1,3 +1,13 @@
+.data_diri{
+	width: 100%;
+	height: 280px;
+}
+
+.keranjang{
+	width: 100%;
+	height: 250px;
+}
+
 .data-diri{
 	width: 100%;
 	height: 180px;
@@ -10,10 +20,14 @@
 
 .ikon-samping{
 	width: 100%;
-	height: 70%;
+	height: 45%;
 }
 
 .kolom{
-	width: 100px;
+	height: 80px;
+}
+
+.sosmed{
+	width: 100%;
 	height: 100px;
 }
