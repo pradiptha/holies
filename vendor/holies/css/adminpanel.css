@@ -5,9 +5,9 @@ body,html{
 	background-color: #eaeaea;
 }
 
-.layer{
-	height: 100%;
-	width: 100%;
+.register-logo {
+    width: 120px;
+    margin: 0 auto;
 }
 
 .dashboard{
@@ -52,3 +52,7 @@ body,html{
 	height: 100%;
 }
 
+.nav{
+	width: 300px;
+	margin-left: 80%;
+}
