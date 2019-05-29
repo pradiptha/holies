@@ -52,7 +52,6 @@
 
 </html>
 <?php
-session_start();
 include "../php/config.php";
 
 if (isset($_POST['submit'])) {
@@ -66,6 +65,7 @@ if (isset($_POST['submit'])) {
     $tingkatan = $data["tingkatan"];
     if ($data) {
         $_SESSION['username'] = $_POST['username'];
+        $_SESSION['id'] = $data['id_user'];
         // echo $tingkatan;
         if ($tingkatan === "customer") {
             // echo "customer";
