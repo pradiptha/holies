@@ -52,4 +52,15 @@
 .gambar-jual{
 	width: 100%;
 	height: 200px;
+	background-color: white;
+}
+
+.box1{
+	width: 800px;
+	height: 200px;
+}
+
+.box2{
+	width: 800px;
+	height: 220px;
 }
