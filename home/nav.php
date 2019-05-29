@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ session_start();
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container-fluid">
-            <a class="navbar-brand text-white" href="#">HOLIES</a>
+            <a class="navbar-brand text-white" href="/holies">HOLIES</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -53,7 +53,7 @@ session_start();
                                 <?= $_SESSION['username'] ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="profile.php">Profile</a>
                                 <a class="dropdown-item" href="#">Favorites</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="logout.php">Logout</a>
