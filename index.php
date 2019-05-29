@@ -41,7 +41,7 @@ if (isset($_SESSION['username'])) {
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link active" href="home/login.php">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link active" href="home/">Home <span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link" href="#">Features</a>
           <a class="nav-item nav-link" href="#">About</a>
           <a class="nav-item btn btn-success text-white" href="home/login.php">LOGIN</a>

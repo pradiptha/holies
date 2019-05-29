@@ -44,7 +44,7 @@
                 <ul class="navbar-nav">
                     <?php if (isset($_SESSION['username'])) : ?>
                         <li class="nav-item active mr-lg-2">
-                            <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i><span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i><span class="sr-only">(current)</span></a>
                         </li>
                         <div class="vertical-border"></div>
                         <li class="nav-item dropdown account-name ml-lg-2">
