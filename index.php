@@ -41,7 +41,7 @@ if (isset($_SESSION['username'])) {
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link active" href="home">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link active" href="home/login.php">Home <span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link" href="#">Features</a>
           <a class="nav-item nav-link" href="#">About</a>
           <a class="nav-item btn btn-success text-white" href="home/login.php">LOGIN</a>
@@ -98,7 +98,7 @@ if (isset($_SESSION['username'])) {
         <h2>You Can <span>Work</span> Every <span>Where</span></h2>
         <p>Bekerja dengan suasana hati yang lebih asik, menyenangkan
           dan mempelajari hal baru setiap harinya.</p>
-        <a href="seller/register.php" class="btn btn-primary tombol">Register as Seller</a>
+        <a href="seller/register.php" class="btn btn-primary tombol bg-success">Register as Seller</a>
       </div>
     </div>
     <!-- akhir Workingspace -->
@@ -128,7 +128,7 @@ if (isset($_SESSION['username'])) {
 
   </div>
   <!-- akhir container -->
-  <div class="footer">
+  <div class="footer bg-success">
     <p>2019 | Created with &hearts; by HOLIES INDONESIA</p>
   </div>
 
