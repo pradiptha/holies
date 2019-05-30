@@ -64,13 +64,12 @@
             <div class="row" style="padding-left: 10px">
               <p style="margin-top: 10px; width: 25px;">Rp.</p>
               <h2 class="text-success">4000</h2>
-              <p style="margin-top: 10px;">/Ekor</p>
             </div>
             <div class="row" style="padding-left: 10px; height: 20px; margin-bottom: 20px">
               <p style="font-size: 14px;">Daerah kab. Badung</p>
             </div>
             <a href="#" class="btn-sm btn-outline-success">Lihat lebih lanjut</a>
-            <i class="fas fa-heart" aria-hidden="true"></i>
+            <i class="fas fa-heart fa-lg" aria-hidden="true"></i>
           </div>
         </div>
       </div>
@@ -82,7 +81,6 @@
             <div class="row" style="padding-left: 10px">
               <p style="margin-top: 10px; width: 25px;">Rp.</p>
               <h2 class="text-success">4000</h2>
-              <p style="margin-top: 10px;">/Butir</p>
             </div>
             <div class="row" style="padding-left: 10px; height: 20px; margin-bottom: 20px">
               <p style="font-size: 14px;">Daerah kab. Badu</p>
@@ -100,7 +98,6 @@
             <div class="row" style="padding-left: 10px">
               <p style="margin-top: 10px; width: 25px;">Rp.</p>
               <h2 class="text-success">4000</h2>
-              <p style="margin-top: 10px;">/Butir</p>
             </div>
             <div class="row" style="padding-left: 10px; height: 20px; margin-bottom: 20px">
               <p style="font-size: 14px;">Daerah kab. Bamdung</p>
@@ -118,7 +115,6 @@
             <div class="row" style="padding-left: 10px">
               <p style="margin-top: 10px; width: 25px;">Rp.</p>
               <h2 class="text-success">40000</h2>
-              <p style="margin-top: 10px;">/Kotak</p>
             </div>
             <div class="row" style="padding-left: 10px; height: 20px; margin-bottom: 20px">
               <p style="font-size: 14px;">Daerah kab. Buleleng</p>
@@ -131,7 +127,7 @@
     </div>
   </div>
   <?php
-  // include "../php/footer.php"
+  include "../php/footer.php"
   ?>
   <!-- Bootstrap core JavaScript -->
   <script src="../vendor/jquery/jquery.slim.min.js"></script>

@@ -14,10 +14,12 @@
 
     <div class="gradient-background container">
         <div class="row justify-content-sm-center">
-            <div class="register-page rounded my-5 p-5 ">
+            <div class="register-page shadow rounded my-5 p-5 ">
                 <div class="col-sm-auto">
                     <div class="register-logo">
-                        <img src="../vendor/holies/img/holies-text.png" alt="">
+                        <a href="/holies">
+                            <img src="../vendor/holies/img/holies-text.png" alt="">
+                        </a>
                     </div>
                     <form method="post" action="">
                         <div class="form-group">

@@ -1,41 +1,42 @@
-.footer-top{
+.footer-top {
 	padding-top: 5px;
 	background-color: #D9FFF0;
 	height: 100%;
-	font-style: 'century gothic',san-serif;
+	font-style: 'century gothic', san-serif;
 }
-.f1{
+
+.f1 {
 	margin-left: 60px;
 }
 
-.f2{
+.f2 {
 	width: 200px;
 	margin: 0;
 }
 
-a:link {
- 	text-decoration: none;
- 	color: #048551;
- 	font-weight: bold;
- 	padding: 10px 10px;
-}
+/* a:link {
+	text-decoration: none;
+	color: #048551;
+	font-weight: bold;
+	padding: 10px 10px;
+} */
 
-.f2 ul li{
+.f2 ul li {
 	margin: 6px;
 	background-color: #02A161;
 	border-radius: 20px;
 	width: 180px;
 	padding: 5px 25px;
 	color: white;
-	text-align : center;
+	text-align: center;
 	font-style: normal;
 	font-size: 13px;
-}	
+}
 
-.seluruh{
+.seluruh {
 	margin-left: 220px;
 }
 
-.segment-two{
-	margin : auto auto;
+.segment-two {
+	margin: auto auto;
 }
