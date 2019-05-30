@@ -76,7 +76,7 @@ while ($row = mysqli_fetch_assoc($sql1)) {
                   <h5 class="card-title"><?= $key['nama_produk'] ?></h5>
                   <div class="row" style="padding-left: 10px">
                     <p style="margin-top: 10px; width: 25px;">Rp.</p>
-                    <h2 class="text-success">4000</h2>
+                    <h2 class="text-success"><?= $key['harga_satuan'] ?></h2>
                   </div>
                   <div class="row" style="padding-left: 10px; height: 20px; margin-bottom: 20px">
                     <p style="font-size: 14px;">Daerah kab. Badung</p>
