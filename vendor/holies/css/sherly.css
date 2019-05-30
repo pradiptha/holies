@@ -55,10 +55,9 @@
 	border-top-right-radius: 1.35rem !important;
 }
 
-.barang-jual {
-	width: 100%;
-	overflow: hidden;
-}
+/* .barang-jual {
+	width: 1050px;
+} */
 
 .box1 {
 	width: 800px;

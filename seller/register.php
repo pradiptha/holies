@@ -18,7 +18,7 @@
                 <div class="col-sm-auto">
                     <h6 class="text-center">Register as Seller</h6>
                     <div class="register-logo">
-                        <img src="../vendor/holies/img/holies-text.png" alt="">
+                        <a href="/holies"><img src="../vendor/holies/img/holies-text.png" class="register-logo" alt=""></a>
                     </div>
                     <form method="post" action="">
                         <div class="form-group">

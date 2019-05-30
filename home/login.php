@@ -21,7 +21,7 @@
         <div class="row justify-content-sm-center">
             <div class="register-page rounded my-5 p-5 shadow">
                 <div class="col-sm-auto">
-                    <img src="../vendor/holies/img/holies-text.png" class="register-logo" alt="">
+                    <a href="/holies"><img src="../vendor/holies/img/holies-text.png" class="register-logo" alt=""></a>
                     <form method="post" action="">
                         <div class="form-group">
                             <label for="username">Username</label>

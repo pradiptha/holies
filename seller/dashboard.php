@@ -1,4 +1,5 @@
 <?php
+
 ?>
 
 <!DOCTYPE html>
@@ -40,11 +41,11 @@
         <div class="list-group px-3">
             <a href="index.php" class="list-group-item list-group-item-action text-center">Home</a>
             <a href="jual.php" class="list-group-item list-group-item-action text-center">Jual Barang</a>
-            <a href="" class="list-group-item list-group-item-action text-center">Akun Saya</a>
+            <a href="akunsaya.php" class="list-group-item list-group-item-action text-center">Akun Saya</a>
             <a href="" class="list-group-item list-group-item-action text-center">Pesan</a>
         </div>
         <div class="d-flex justify-content-center p-3">
-            <button type="button" class="btn btn-success">LOGOUT</button>
+            <a href="../home/logout.php" class="btn btn-success">LOGOUT</a>
         </div>
     </div>
 
