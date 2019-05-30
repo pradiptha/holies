@@ -1,8 +1,11 @@
 <?php
 include '../php/config.php';
-$id_user = $_SESSION['id'];
-$sql = mysqli_query($conn, "SELECT * FROM detail_user WHERE id_user = '$id_user' ");
-$data = mysqli_fetch_assoc($sql);
+if (isset($_SESSION['id'])) {
+  $id_user = $_SESSION['id'];
+  $sql = mysqli_query($conn, "SELECT * FROM detail_user WHERE id_user = '$id_user' ");
+  $data = mysqli_fetch_assoc($sql);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
