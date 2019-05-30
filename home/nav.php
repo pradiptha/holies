@@ -57,7 +57,7 @@ while ($row = mysqli_fetch_assoc($sql)) {
                         <?php endif ?>
                         <li class="nav-item dropdown account-name ml-lg-2">
                             <a class="nav-link dropdown-toggle text-white nav-img-acc" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="../img/profile/<?= $data['foto'] ?>" alt="" class="nav-img-acc mr-lg-2 rounded-circle">
+                                <img src="../img/profile/<?= $data['foto_profil'] ?>" alt="" class="nav-img-acc mr-lg-2 rounded-circle">
                                 <?= $data['nama'] ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">

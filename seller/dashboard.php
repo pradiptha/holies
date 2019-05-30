@@ -40,7 +40,7 @@ $data = mysqli_fetch_assoc($sql);
     </nav>
     <div class="shadow mb-5 bg-white rounded-bottom dashboard p-0">
         <div class="text-center mt-3">
-            <img src="../img/profile/<?= $data['foto'] ?>" class="PP" style="object-fit:cover;" alt="PP">
+            <img src="../img/profile/<?= $data['foto_profil'] ?>" class="PP" style="object-fit:cover;" alt="PP">
         </div>
         <div class="username">
             <h1><?= $data['nama'] ?></h1>

@@ -10,8 +10,7 @@ $id_seller = mysqli_fetch_assoc($abc);
 $id_seller = $id_seller['id_seller'];
 
 $sql = mysqli_query($conn, "SELECT * FROM produk INNER JOIN produk_kategori USING(id_produk) 
-        INNER JOIN gmbr_produk USING(id_produk) 
-        INNER JOIN seller_produk USING(id_produk) WHERE id_seller = '$id_seller' ");
+        INNER JOIN gmbr_produk USING(id_produk) WHERE id_seller = '$id_seller' ");
 $rows = [];
 while ($row = mysqli_fetch_assoc($sql)) {
     $rows[] = $row;
@@ -44,10 +43,10 @@ while ($row = mysqli_fetch_assoc($sql)) {
             <div class="card-deck barang-jual">
                 <?php if ($rows) : ?>
                     <?php foreach ($rows as $key) : ?>
-                        <div class="bg-white mt-3 ml-2 rounded shadow">
-                            <img style="max-width: 250px; max-height: 150px; " class="gambar-jual card-img-top" src="../img/barang/<?= $key['gambar_produk'] ?>">
+                        <div class="bg-white mt-3 ml-2 rounded shadow" style="max-width: 200px;">
+                            <img style=" max-width: 250px; max-height: 150px; " class=" gambar-jual card-img-top" src="../img/barang/<?= $key['gambar_produk'] ?>">
                             <div class="card-body">
-                                <h5 class="card-title"><?= $key['nama_produk'] ?></h5>
+                                <h5 class="card-title" style="max-width: 200px;"><?= $key['nama_produk'] ?></h5>
                                 <h6 class="text-success font-weight-bold mb-4">Rp. <?= $key['harga_satuan'] ?></h6>
                                 <a href="hapus.php?id=<?= $key['id_produk'] ?>" class="btn btn-sm btn-danger">Hapus</a>
                                 <a href="ubah.php?id=<?= $key['id_produk'] ?>" class="btn btn-sm btn-success">Update</a>
