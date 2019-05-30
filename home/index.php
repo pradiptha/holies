@@ -81,7 +81,7 @@ while ($row = mysqli_fetch_assoc($sql1)) {
                   <div class="row" style="padding-left: 10px; height: 20px; margin-bottom: 20px">
                     <p style="font-size: 14px;">Daerah kab. Badung</p>
                   </div>
-                  <a href="#" class="btn-sm btn-outline-success">Lihat lebih lanjut</a>
+                  <a href="detail_barang.php?id=<?= $key['id_produk'] ?>" class="btn-sm btn-outline-success">Lihat lebih lanjut</a>
                   <i class="fas fa-heart fa-lg" aria-hidden="true"></i>
                 </div>
               </div> 
