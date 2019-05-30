@@ -27,3 +27,24 @@ html,body{
 	height: 140px;
 	border-radius: 50%;
 }
+.quantity-field {
+  position: relative;
+  height: inherit;
+  text-align: center;
+  width: inherit;
+  display: inline-block;
+  font-size: 13px;
+  resize: vertical;
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.input-group
+{
+	width: 100px;
+}
