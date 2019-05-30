@@ -14,7 +14,7 @@ body {
 	position: absolute;
 	background-position: center;
 	background-repeat: no-repeat;
-	filter: brightness(40%);
+	filter: brightness(70%);
 
 }
 
@@ -33,12 +33,12 @@ body {
 
 
 .card {
-	max-width: 250px;
+	max-width: 300px;
 }
 
 .card-img-top {
-	max-width: 250px;
-	max-height: 150px;
+	height: 160px;
+	width: 260px;
 }
 
 .card-title {

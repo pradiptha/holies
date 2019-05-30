@@ -3,6 +3,12 @@ include '../php/config.php';
 $id_user = $_SESSION['id'];
 $sql = mysqli_query($conn, "SELECT * FROM detail_user WHERE id_user = '$id_user' ");
 $data = mysqli_fetch_assoc($sql);
+
+$sql1 = mysqli_query($conn, "SELECT * FROM produk INNER JOIN gmbr_produk USING(id_produk) LIMIT 4");
+$rows = [];
+while ($row = mysqli_fetch_assoc($sql1)) {
+    $data_barang[] = $row;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,74 +67,27 @@ $data = mysqli_fetch_assoc($sql);
   </div>
   <div class="mb-5 mt-5 container ">
     <div class="row">
-      <div class="col-lg-3">
-        <div class="card shadow-sm">
-          <img src="../img/anak_kerbau.jpg" class="card-img-top d-block w-100" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Anak Sapi Cilendek</h5>
-            <div class="row" style="padding-left: 10px">
-              <p style="margin-top: 10px; width: 25px;">Rp.</p>
-              <h2 class="text-success">4000</h2>
+      <?php if ($data_barang) : ?>
+        <?php foreach ($data_barang as $key) : ?>
+            <div class="col-lg-3">
+              <div class="card shadow-sm">
+                <img class="card-img-top d-block w-100" src="../img/barang/<?= $key['gambar_produk'] ?>" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><?= $key['nama_produk'] ?></h5>
+                  <div class="row" style="padding-left: 10px">
+                    <p style="margin-top: 10px; width: 25px;">Rp.</p>
+                    <h2 class="text-success"><?= $key['harga_satuan'] ?></h2>
+                  </div>
+                  <div class="row" style="padding-left: 10px; height: 20px; margin-bottom: 20px">
+                    <p style="font-size: 14px;">Daerah kab. Badung</p>
+                  </div>
+                  <a href="#" class="btn-sm btn-outline-success">Lihat lebih lanjut</a>
+                  <i class="fas fa-heart fa-lg" aria-hidden="true"></i>
+                </div>
+              </div> 
             </div>
-            <div class="row" style="padding-left: 10px; height: 20px; margin-bottom: 20px">
-              <p style="font-size: 14px;">Daerah kab. Badung</p>
-            </div>
-            <a href="#" class="btn-sm btn-outline-success">Lihat lebih lanjut</a>
-            <i class="fas fa-heart fa-lg" aria-hidden="true"></i>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="card shadow-sm">
-          <img src="../img/telur_ayam.jpg" class="card-img-top d-block w-100" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Telur ayam kampung</h5>
-            <div class="row" style="padding-left: 10px">
-              <p style="margin-top: 10px; width: 25px;">Rp.</p>
-              <h2 class="text-success">4000</h2>
-            </div>
-            <div class="row" style="padding-left: 10px; height: 20px; margin-bottom: 20px">
-              <p style="font-size: 14px;">Daerah kab. Badu</p>
-            </div>
-            <a href="#" class="btn-sm btn-outline-success">Lihat lebih lanjut</a>
-            <i class="fas fa-heart" aria-hidden="true"></i>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="card shadow-sm">
-          <img src="../img/telur_bebek.jpg" class="card-img-top d-block w-100" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Telur Bebek tadi pagi</h5>
-            <div class="row" style="padding-left: 10px">
-              <p style="margin-top: 10px; width: 25px;">Rp.</p>
-              <h2 class="text-success">4000</h2>
-            </div>
-            <div class="row" style="padding-left: 10px; height: 20px; margin-bottom: 20px">
-              <p style="font-size: 14px;">Daerah kab. Bamdung</p>
-            </div>
-            <a href="#" class="btn-sm btn-outline-success">Lihat lebih lanjut</a>
-            <i class="fas fa-heart" aria-hidden="true"></i>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="card shadow-sm">
-          <img src="../img/keju.jpg" class="card-img-top d-block w-100" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Keju asal Cibaduyut</h5>
-            <div class="row" style="padding-left: 10px">
-              <p style="margin-top: 10px; width: 25px;">Rp.</p>
-              <h2 class="text-success">40000</h2>
-            </div>
-            <div class="row" style="padding-left: 10px; height: 20px; margin-bottom: 20px">
-              <p style="font-size: 14px;">Daerah kab. Buleleng</p>
-            </div>
-            <a href="#" class="btn-sm btn-outline-success">Lihat lebih lanjut</a>
-            <i class="fas fa-heart" aria-hidden="true"></i>
-          </div>
-        </div>
-      </div>
+        <?php endforeach ?>
+      <?php endif ?> 
     </div>
   </div>
   <?php

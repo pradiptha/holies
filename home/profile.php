@@ -1,5 +1,6 @@
 <?php
 include "../php/config.php";
+
 if (isset($_SESSION['id'])) {
 	$id = $_SESSION['id'];
 	$sql = "SELECT *FROM user INNER JOIN detail_user USING(id_user) WHERE id_user='$id'";
