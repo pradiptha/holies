@@ -45,11 +45,11 @@ while ($row = mysqli_fetch_assoc($sql)) {
                 <?php if ($rows) : ?>
                     <?php foreach ($rows as $key) : ?>
                         <div class="bg-white mt-3 ml-2 rounded shadow">
-                            <img class="gambar-jual card-img-top" src="../img/barang/<?= $key['gambar_produk'] ?>">
+                            <img style="max-width: 250px; max-height: 150px; " class="gambar-jual card-img-top" src="../img/barang/<?= $key['gambar_produk'] ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $key['nama_produk'] ?></h5>
                                 <h6 class="text-success font-weight-bold mb-4">Rp. <?= $key['harga_satuan'] ?></h6>
-                                <a href="delete.php?id=<?= $key['id_produk'] ?>" class="btn btn-sm btn-danger">Hapus</a>
+                                <a href="hapus.php?id=<?= $key['id_produk'] ?>" class="btn btn-sm btn-danger">Hapus</a>
                                 <a href="ubah.php?id=<?= $key['id_produk'] ?>" class="btn btn-sm btn-success">Update</a>
                             </div>
                         </div>

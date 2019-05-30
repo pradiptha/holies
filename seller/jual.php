@@ -15,16 +15,20 @@ $id_seller = $id_seller['id_seller'];
 //Tambah Barang
 if (isset($_POST['submit'])) {
 	//foto
-	$namaFile = $_FILES['foto']['name'];
 	$error = $_FILES['foto']['error'];
-	$tmp = $_FILES['foto']['tmp_name'];
-	$ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
-	$ekstensiGambar = explode('.', $namaFile);
-	$ekstensiGambar = strtolower(end($ekstensiGambar));
-	$namaFileBaru = uniqid();
-	$namaFileBaru = $namaFileBaru . '.' . $ekstensiGambar;
-	if (in_array($ekstensiGambar, $ekstensiGambarValid)) {
-		move_uploaded_file($tmp, '../img/barang/' . $namaFileBaru);
+	if ($error === 4) {
+		$gambar = "defaultphoto.png";
+	} else {
+		$namaFile = $_FILES['foto']['name'];
+		$tmp = $_FILES['foto']['tmp_name'];
+		$ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+		$ekstensiGambar = explode('.', $namaFile);
+		$ekstensiGambar = strtolower(end($ekstensiGambar));
+		$namaFileBaru = uniqid();
+		$gambar = $namaFileBaru . '.' . $ekstensiGambar;
+		if (in_array($ekstensiGambar, $ekstensiGambarValid)) {
+			move_uploaded_file($tmp, '../img/barang/' . $namaFileBaru);
+		}
 	}
 	//form
 	$namaBarang = mysqli_real_escape_string($conn, $_POST['namabarang']);
@@ -36,12 +40,13 @@ if (isset($_POST['submit'])) {
 	if (mysqli_query($conn, $sql)) {
 		$last_id = mysqli_insert_id($conn);
 		$sql1 = "INSERT INTO `seller_produk` (`id_seller`, `id_produk`, `quantity`, `harga_satuan`) VALUES ('$id_seller', '$last_id', '$stok', '$harga')";
-		$sql2 = " INSERT INTO gmbr_produk(id_produk,gambar_produk) VALUES('$last_id','$namaFileBaru')";
+		$sql2 = " INSERT INTO gmbr_produk(id_produk,gambar_produk) VALUES('$last_id','$gambar')";
 		$sql3  = "INSERT INTO produk_kategori(id_produk,id_kategori) VALUES('$last_id','$kategori')";
 		mysqli_query($conn, $sql1);
 		mysqli_query($conn, $sql2);
 		mysqli_query($conn, $sql3);
 	}
+	header("location: index.php");
 }
 ?>
 <!DOCTYPE html>
