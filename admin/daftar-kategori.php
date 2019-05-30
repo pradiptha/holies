@@ -56,24 +56,25 @@ if (isset($_POST['submit'])) {
 					      	<th>Action</th>
 				    	</tr>
 				  	</thead>
-
-				  	<?php $i=1; foreach ($datas as $key): ?> 
-					  	<tbody>
-					    	<tr>
-					      		<td><?php echo $i ?></td>
-					      		<td><?php echo $key['id_kategori'] ?></td>
-					      		<td><?php echo htmlspecialchars($key['nama_kategori']) ?></td>
-					      		<td>
-					      			<a href="edit-kategori.php">
-					      				<i class="fas fa-pen float-left text-success"></i>
-					      			</a>
-					      			<a href="">
-					      				<i class="fas fa-trash float-left text-success ml-4"></i>
-					      			</a>
-					     		</td>
-					    	</tr>
-					 	</tbody>
-				 	<?php $i++; endforeach ?>
+				  	<?php if ($datas) : ?>
+					  	<?php $i=1; foreach ($datas as $key): ?> 
+						  	<tbody>
+						    	<tr>
+						      		<td><?php echo $i ?></td>
+						      		<td><?php echo $key['id_kategori'] ?></td>
+						      		<td><?php echo htmlspecialchars($key['nama_kategori']) ?></td>
+						      		<td>
+						      			<a href="edit-kategori.php?id_kategori=<?php echo $key['id_kategori'] ?>">
+						      				<i class="fas fa-pen float-left text-success"></i>
+						      			</a>
+						      			<a href="hapuskategori.php?id_kategori=<?php echo $key['id_kategori'] ?>">
+						      				<i class="fas fa-trash float-left text-success ml-4"></i>
+						      			</a>
+						     		</td>
+						    	</tr>
+						 	</tbody>
+					 	<?php $i++; endforeach ?>
+					 <?php endif ?>
 				</table>
 	    	</div>
 	    	<div class="bg-white rounded shadow p-4 mt-5">

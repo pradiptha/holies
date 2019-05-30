@@ -13,7 +13,8 @@ $sql2 = mysqli_query($conn, "SELECT * FROM detail_user INNER JOIN user ON detail
 
  //buat array
 $customer = [];
-//buat array
+$datacust = [];
+$datasell = [];
 $seller = [];
 
 //perulangan untuk mengubah data dari hasil query menjadi array
@@ -63,7 +64,7 @@ while($seller = mysqli_fetch_assoc($sql2))
 					      		<td><?php echo $i ?></th>
 					      		<td><?php echo $key['nama'] ?></td>
 					      		<td>
-					      			<a href="">
+					      			<a href="hapususer.php?iduser=<?php echo $key['id_user'] ?>">
 					      				<i class="fas fa-trash float-left text-success"></i>
 					      			</a>
 					      		</td>
@@ -92,7 +93,7 @@ while($seller = mysqli_fetch_assoc($sql2))
 					      		<td><?php echo $i ?></th>
 					      		<td><?php echo $key['nama'] ?></td>
 					      		<td>
-					      			<a href="">
+					      			<a href="hapususer.php?iduser=<?php echo $key['id_user'] ?>">
 					      				<i class="fas fa-trash float-left text-success"></i>
 					      			</a>
 					      		</td>

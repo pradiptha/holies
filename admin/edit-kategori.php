@@ -1,3 +1,18 @@
+<?php
+    $idkategori = $_GET['id_kategori'];
+    $conn = mysqli_connect("localhost","root","","db_holies");
+    $sql = mysqli_query($conn,"SELECT * FROM kategori WHERE kategori.id_kategori='$idkategori'");
+    $data = mysqli_fetch_array($sql);
+
+    if (isset($_POST['submit'])) {
+    
+        $namakategori = mysqli_real_escape_string($conn, $_POST['namakategori']);
+        $sql = mysqli_query($conn, "UPDATE kategori SET nama_kategori= '$namakategori' WHERE id_kategori='$idkategori'");
+        header("location: daftar-kategori.php");
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,20 +35,21 @@
     </nav>
     <div class="container d-flex justify-content-center align-items-center">
     	<div class=" kotak-edit bg-white rounded shadow p-4 mt-5">
-    		<h5>ID Produk</h5>
-    		<div class="input-group mb-3">
-			  	<input type="text" class="form-control"aria-describedby="basic-addon2">
-			</div>
-			<h5>Nama Produk</h5>
-			<div class="input-group mb-3">
-			  	<input type="text" class="form-control"aria-describedby="basic-addon2">
-			</div>
-			<a href="daftar-kategori.php">
-				<button type="button" class="btn btn-danger">Batalkan</button>
-			</a>
-			<a href="">
-				<button type="button" class="btn btn-success">Submit</button>
-			</a>
+            <form method="POST">
+                <h5>ID Produk</h5>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control"aria-describedby="basic-addon2" value="<?php echo $data['id_kategori'] ?>" readonly>
+                </div>
+                <h5>Nama Produk</h5>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control"aria-describedby="basic-addon2" value="<?php echo $data['nama_kategori'] ?>" name="namakategori">
+                </div>
+                <a href="daftar-kategori.php">
+                    <button type="button" class="btn btn-danger">Batalkan</button>
+                </a>
+                <button class="btn btn-success" type="submit" id="button-addon2" name="submit">Submit</button>
+            </form>
+    		
     	</div>
     </div>
 </body>

@@ -32,7 +32,7 @@ $data = mysqli_fetch_assoc($sql);
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="pl-5">
-            <a class="navbar-brand ml-4" href="/holies">HOLIES</a>
+            <a class="navbar-brand ml-4 text-white">HOLIES</a>
         </div>
     </nav>
     <div class="shadow mb-5 bg-white rounded-bottom dashboard p-0 float-left">
