@@ -1,4 +1,11 @@
-<?php include '../php/config.php' ?>
+<?php
+include '../php/config.php';
+if (isset($_SESSION['id'])) {
+    $id = $_SESSION['id'];
+    $sql = "SELECT *FROM user INNER JOIN detail_user USING(id_user) WHERE id_user='$id'";
+    $data = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+    // var_dump($result);
+} ?>
 <!DOCTYPE html>
 <html>
 

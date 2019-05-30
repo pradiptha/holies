@@ -9,4 +9,4 @@ mysqli_query($conn, $sql);
 mysqli_query($conn, $sql1);
 mysqli_query($conn, $sql2);
 mysqli_query($conn, $sql3);
-header("location: index.php")
+header("location: index.php");

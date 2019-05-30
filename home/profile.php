@@ -3,11 +3,11 @@ include "../php/config.php";
 if (isset($_SESSION['id'])) {
 	$id = $_SESSION['id'];
 	$sql = "SELECT *FROM user INNER JOIN detail_user USING(id_user) WHERE id_user='$id'";
-	$result = mysqli_fetch_assoc(mysqli_query($conn, $sql));
-	$nama = $result['nama'];
-	$alamat = $result['alamat'];
-	$email = $result['email'];
-	$telp = $result['telp'];
+	$data = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+	$nama = $data['nama'];
+	$alamat = $data['alamat'];
+	$email = $data['email'];
+	$telp = $data['telp'];
 	// var_dump($result);
 }
 ?>
@@ -37,7 +37,7 @@ if (isset($_SESSION['id'])) {
 				<h2 class="text-success">Akun Saya</h2>
 				<div class="shadow mb-3 bg-white rounded data-diri p-3">
 					<div class="gambar-diri float-left">
-						<img src="../img/mark.png" class="rounded-circle" style="width: 100%; height: 100%;">
+						<img src="../img/profile/<?= $data['foto'] ?>" class="rounded-circle" style="width: 100%; height: 100%;">
 					</div>
 					<div class="detail float-left ml-3">
 						<h3 class="pl-1"><?= $nama ?></h3>
