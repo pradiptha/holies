@@ -49,7 +49,7 @@ while ($row = mysqli_fetch_assoc($sql)) {
                             <div class="card-body">
                                 <h5 class="card-title"><?= $key['nama_produk'] ?></h5>
                                 <h6 class="text-success font-weight-bold mb-4">Rp. <?= $key['harga_satuan'] ?></h6>
-                                <a href="delete.php?id=<?= $key['id_produk'] ?>" class="btn btn-sm btn-danger">Hapus</a>
+                                <a href="hapus.php?id=<?= $key['id_produk'] ?>" class="btn btn-sm btn-danger">Hapus</a>
                                 <a href="ubah.php?id=<?= $key['id_produk'] ?>" class="btn btn-sm btn-success">Update</a>
                             </div>
                         </div>
