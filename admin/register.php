@@ -16,10 +16,9 @@
         <div class="row justify-content-sm-center">
             <div class="register-page shadow rounded my-5 p-5 ">
                 <div class="col-sm-auto">
+                    <h6 class="text-center">Registrasi sebagai ADMIN</h6>
                     <div class="register-logo">
-                        <a href="/holies">
-                            <img src="../vendor/holies/img/holies-text.png" alt="">
-                        </a>
+                        <img src="../vendor/holies/img/holies-text.png" class="register-logo" alt="">
                     </div>
                     <form method="post" action="">
                         <div class="form-group">
@@ -58,8 +57,7 @@
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                         </div>
-                        <a href="login.php"><button type="button" class="btn btn-success">Login</button></a>
-                        <button type="submit" class="btn btn-success float-right" name="submit">Submit</button>
+                        <button type="submit" class="btn btn-success" name="submit">Submit</button>
                     </form>
                 </div>
             </div>
@@ -68,7 +66,8 @@
 </body>
 
 </html>
-<!-- foto profil tak apus di database ingetin ya -->
+
+
 <?php
 include '../php/config.php';
 if (isset($_POST['submit'])) {
@@ -80,13 +79,13 @@ if (isset($_POST['submit'])) {
     $user = mysqli_real_escape_string($conn, $_POST['username']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-    $sql = "INSERT INTO user(username,password,tingkatan) VALUES ('$user','$password','customer') ";
+    $sql = "INSERT INTO user(username,password,tingkatan) VALUES ('$user','$password','admin') ";
     if (mysqli_query($conn, $sql)) {
         $temp = mysqli_fetch_assoc(mysqli_query($conn, "SELECT id_user FROM user ORDER BY id_user  DESC LIMIT 1"));
         $number = $temp["id_user"];
-        $sql1 = "INSERT INTO detail_user(id_user,nama,jk,alamat,telp,email,foto_profil) VALUES ('$number','$nama','$jeniskelamin','$alamat','$telp','$email','nophoto.png')";
+        $sql1 = "INSERT INTO detail_user(id_user,nama,jk,alamat,telp,email) VALUES ('$number','$nama','$jeniskelamin','$alamat','$telp','$email')";
         mysqli_query($conn, $sql1);
-        header("location: login.php");
     }
+    header("location: ../home/login.php");
 }
 ?>

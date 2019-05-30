@@ -80,6 +80,10 @@ if (isset($_POST['submit'])) {
             // echo "seller";
             $_SESSION['type'] = $tingkatan;
             header("location: ../seller/index.php");
+        }else if ($tingkatan === "admin") {
+            // echo "seller";
+            $_SESSION['type'] = $tingkatan;
+            header("location: ../admin/daftar-kategori.php");
         }
     } else {
         // header("location: login.php");
