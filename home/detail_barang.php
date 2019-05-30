@@ -3,11 +3,13 @@ $id_barang = $_GET['id'];
 include "../php/config.php";
 if (isset($_SESSION['id'])) {
 	$id = $_SESSION['id'];
+	$id_user = $id;
 	$sql = "SELECT * FROM user INNER JOIN detail_user USING(id_user) WHERE id_user='$id'";
 	$data = mysqli_fetch_assoc(mysqli_query($conn, $sql));
 }
 	$query = "SELECT * FROM produk INNER JOIN gmbr_produk USING (id_produk) INNER JOIN seller USING (id_seller) INNER JOIN detail_user USING (id_user) WHERE id_produk='$id_barang'";
 	$simpan = mysqli_fetch_assoc(mysqli_query($conn, $query));
+
 ?>
 
 <!DOCTYPE html>
@@ -42,15 +44,17 @@ if (isset($_SESSION['id'])) {
 					</p>
 					<p class="text-secondary">Tersedia <?= $simpan['quantity'] ?> /satuan</p>
 					<p class="text-secondary">Masukkan jumlah yang diinginkan</p>
-  					<div class="hitung">
-	  					<button type="button" value="-" class="btn minus btn-primary btn-sm bg-success float-left" data-field="quantity">-</button>
-						<span  class="border border-secondary float-left box2">
-							<input class="quantity-field" type="number" step="1" max="" value="1" name="quantity">
-						</span>
-						<button type="button" value="+" class="btn plus btn-secondary btn-sm bg-success float-left" data-field="quantity">+</button>
-  					</div>
-					<button type="submit" class="btn btn-success btn-lg btn-block">BELI SEKARANG</button>
-					<button type="submit" class="btn btn-secondary btn-lg btn-block">TAMBAH KE KERANJANG</button>
+					<form method="post">
+						<div class="hitung">
+	  						<button type="button" value="-" class="btn minus btn-primary btn-sm bg-success float-left" data-field="quantity">-</button>
+							<span  class="border border-secondary float-left box2">
+								<input class="quantity-field" type="number" step="1" max="" value="1" name="quantity">
+							</span>
+							<button type="button" value="+" class="btn plus btn-secondary btn-sm bg-success float-left" data-field="quantity">+</button>
+	  					</div>
+						<button type="button" class="btn btn-success btn-lg btn-block">BELI SEKARANG</button>
+						<button type="submit" name="submit" class="btn btn-secondary btn-lg btn-block">TAMBAH KE KERANJANG</button>
+					</form>
 				</div>
 				<div class="shadow bg-white rounded mt-3 mb-5 p-3 box3">
 					<div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -141,3 +145,21 @@ if (isset($_SESSION['id'])) {
 </body>
 
 </html>
+
+<?php 
+if (isset($_POST['submit'])) 
+{
+    $qty =mysqli_real_escape_string($conn,$_POST['quantity']);
+    $totalhrg=$qty*$simpan['harga_satuan'];
+
+    $query2 = "INSERT INTO keranjang (id_customer,id_produk,quantity,total_harga) VALUES ('$id_user','$id_barang','$qty','$totalhrg') ";
+    if(mysqli_query($conn,$query2))
+    {
+
+    }
+    else
+    {
+    	echo "gagal";
+    }
+} 
+?>
