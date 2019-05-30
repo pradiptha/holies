@@ -58,8 +58,8 @@
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                         </div>
-                        <button type="submit" class="btn btn-success" name="submit">Submit</button>
-                        <a href="login.php"><button type="button" class="btn btn-success" style="float: right">Login</button></a>
+                        <a href="login.php"><button type="button" class="btn btn-success">Login</button></a>
+                        <button type="submit" class="btn btn-success float-right" name="submit">Submit</button>
                     </form>
                 </div>
             </div>
@@ -84,9 +84,9 @@ if (isset($_POST['submit'])) {
     if (mysqli_query($conn, $sql)) {
         $temp = mysqli_fetch_assoc(mysqli_query($conn, "SELECT id_user FROM user ORDER BY id_user  DESC LIMIT 1"));
         $number = $temp["id_user"];
-        $sql1 = "INSERT INTO detail_user(id_user,nama,jk,alamat,telp,email) VALUES ('$number','$nama','$jeniskelamin','$alamat','$telp','$email')";
+        $sql1 = "INSERT INTO detail_user(id_user,nama,jk,alamat,telp,email,foto_profil) VALUES ('$number','$nama','$jeniskelamin','$alamat','$telp','$email','nophoto.png')";
         mysqli_query($conn, $sql1);
-        header("login.php");
+        header("location: login.php");
     }
 }
 ?>

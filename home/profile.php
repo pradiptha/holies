@@ -37,7 +37,7 @@ if (isset($_SESSION['id'])) {
 				<h2 class="text-success">Akun Saya</h2>
 				<div class="shadow mb-3 bg-white rounded data-diri p-3">
 					<div class="gambar-diri float-left">
-						<img src="../img/profile/<?= $data['foto'] ?>" class="rounded-circle" style="width: 100%; height: 100%;">
+						<img src="../img/profile/<?= $data['foto_profil'] ?>" class="rounded-circle" style="width: 100%; height: 100%;">
 					</div>
 					<div class="detail float-left ml-3">
 						<h3 class="pl-1"><?= $nama ?></h3>
