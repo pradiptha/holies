@@ -25,7 +25,7 @@
   <!-- Page Content -->
   <div class="bgimg" style="background-image: url('../img/farmer.jpg'); z-index: -1">
   </div>
-  <div class="container-fluid text-center" style=" padding-top:150px; color: white; height: 400px;">
+  <div class="container-fluid text-center" style=" padding-top:150px; color: white; height: 512px">
     <h1 class="display-3">DAPATKAN KEMUDAHAN BERSAMA HOLIES</h1>
   </div>
   <div class=" container-fluid bg-white shadow-lg" style="margin-top: 100px; padding-top: 40px; height: 400px">
