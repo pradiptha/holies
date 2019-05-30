@@ -1,4 +1,13 @@
-<?php include "../php/config.php" ?>
+<?php
+include "../php/config.php";
+$id_user = $_SESSION['id'];
+$sql = mysqli_query($conn, "SELECT * FROM user INNER JOIN detail_user USING(id_user) WHERE id_user = '$id_user' ");
+$data = mysqli_fetch_assoc($sql);
+$nama = $data['nama'];
+$alamat = $data['alamat'];
+$email = $data['email'];
+$telp = $data['telp'];
+?>
 
 <!DOCTYPE html>
 <html>
@@ -20,26 +29,26 @@
 	<div class="float-left m-3">
 		<div class="shadow mb-3 bg-white rounded box1 p-3 clearfix">
 			<div class="gambar-diri float-left">
-				<img src="../img/mark.png" class="rounded-circle" style="width: 100%; height: 100%;">
+				<img src="../img/profile/<?= $data['foto'] ?>" class="rounded-circle" style="width: 100%; height: 100%;">
 			</div>
 			<div class="detail float-left ml-3">
-				<h3 class="pl-1">I Gde Made Hendra Pradiptha</h3>
+				<h3 class="pl-1"><?= $nama ?></h3>
 				<table class="table-responsive">
 					<tr>
 						<td><i class="fas fa-map-marker-alt text-success m-2"></i></td>
-						<td>Jalan Tukad Balian No 95 Denpasar</td>
+						<td><?= $alamat ?></td>
 					</tr>
 					<tr>
 						<td><i class="far fa-envelope text-success m-2"></i></i></td>
-						<td>gdehendrapradiptha@gmail.com</td>
+						<td><?= $email ?></td>
 					</tr>
 					<tr>
 						<td><i class="fas fa-phone text-success m-2"></i></td>
-						<td>081234567890</td>
+						<td><?= $telp ?></td>
 					</tr>
 				</table>
 			</div>
-			<a href="editprofil.php"><i class="fas fa-edit fa-2x text-success float-right m-2"></i></a>
+			<a href="editprofil.php"><i class="fas fa-edit fa-lg text-success float-right m-2"></i></a>
 		</div>
 	</div>
 </body>

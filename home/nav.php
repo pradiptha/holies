@@ -1,5 +1,10 @@
 <?php
 // session_start();
+$sql = mysqli_query($conn, "SELECT * FROM kategori");
+$rows = [];
+while ($row = mysqli_fetch_assoc($sql)) {
+    $rows[] = $row;
+}
 ?>
 
 <!DOCTYPE html>
@@ -32,9 +37,10 @@
                         Kategori
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Link 1</a>
-                        <a class="dropdown-item" href="#">Link 2</a>
-                        <a class="dropdown-item" href="#">Link 3</a>
+                        <?php
+                        foreach ($rows as $opsi) : ?>
+                            <a class="dropdown-item" href="barang.php?kategori=<?= $opsi['id_kategori'] ?>"><?= $opsi['nama_kategori'] ?></a>
+                        <?php endforeach ?>
                     </div>
                 </div>
                 <form class="form-inline my-3 my-lg-0 mr-auto">
@@ -51,7 +57,7 @@
                         <?php endif ?>
                         <li class="nav-item dropdown account-name ml-lg-2">
                             <a class="nav-link dropdown-toggle text-white nav-img-acc" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="../icon/user-circle-solid.svg" alt="" class="nav-img-acc mr-lg-2">
+                                <img src="../img/profile/<?= $data['foto'] ?>" alt="" class="nav-img-acc mr-lg-2 rounded-circle">
                                 <?= $_SESSION['username'] ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
