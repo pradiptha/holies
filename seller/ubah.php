@@ -3,9 +3,8 @@
 //ambil data
 $id = $_GET['id'];
 $sql = mysqli_query($conn, "SELECT * FROM produk INNER JOIN produk_kategori USING(id_produk) 
-        INNER JOIN gmbr_produk USING(id_produk) 
-		INNER JOIN seller_produk USING(id_produk) WHERE id_produk = '$id' ");
-$data = mysqli_fetch_assoc($sql);
+        INNER JOIN gmbr_produk USING(id_produk) WHERE id_produk = '$id' ");
+$dataBarang = mysqli_fetch_assoc($sql);
 //Kategori
 $sql4 = mysqli_query($conn, "SELECT * FROM kategori");
 $rows = [];
@@ -30,9 +29,7 @@ if (isset($_POST['submit'])) {
 	$error = $_FILES['foto']['error'];
 	if ($error === 4) {
 		$gambar = $gambarLama;
-		echo "gambarlama";
 	} else {
-		echo "gambarbaru";
 		$namaFile = $_FILES['foto']['name'];
 		$tmp = $_FILES['foto']['tmp_name'];
 		$ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
@@ -45,14 +42,12 @@ if (isset($_POST['submit'])) {
 		}
 	}
 	// echo "idproduk = " . $namaBarang . " " . "deskripsi = " . $deskripsi . " " . $id_produk;
-	$sql = "UPDATE produk SET nama_produk='$namaBarang',deskripsi='$deskripsi' WHERE id_produk='$id_produk'";
+	$sql = "UPDATE produk SET nama_produk='$namaBarang',deskripsi='$deskripsi',quantity = '$stok', harga_satuan = '$harga' WHERE id_produk='$id_produk'";
 	if (mysqli_query($conn, $sql)) {
-		$sql1 = "UPDATE seller_produk SET quantity = '$stok', harga_satuan = '$harga' WHERE id_produk = '$id_produk' ";
-		$sql2 = "UPDATE gmbr_produk SET gambar_produk VALUES '$gambar' WHERE id_produk = '$id_produk' ";
-		$sql3  = "UPDATE produk_kategori SET id_kategori = '$kategori' WHERE id_produk = '$id_produk' ";
+		$sql1 = "UPDATE gmbr_produk SET gambar_produk = '$gambar' WHERE id_produk = '$id_produk' ";
+		$sql2  = "UPDATE produk_kategori SET id_kategori = '$kategori' WHERE id_produk = '$id_produk' ";
 		mysqli_query($conn, $sql1);
 		mysqli_query($conn, $sql2);
-		mysqli_query($conn, $sql3);
 	}
 	header("location: index.php");
 }
@@ -76,18 +71,18 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-	<?php include "dashboard.php" ?>
+	<?php include "dashboard.php"; ?>
 	<div class="row">
 		<h3 class="mt-4 ml-4 text-success">Ubah Data Barang</h3>
 	</div>
 	<form action="" method="POST" enctype="multipart/form-data">
 		<div class="row">
 			<div class="mt-2 mb-4 ml-4 p-3 shadow rounded col-sm-6 bg-white">
-				<input type="hidden" id="id_produk" name="id_produk" value="<?= $data['id_produk'] ?>">
-				<input type="hidden" id="gambar_lama" name="gambar_lama" value="<?= $data['gambar_produk'] ?>">
+				<input type="hidden" id="id_produk" name="id_produk" value="<?= $dataBarang['id_produk'] ?>">
+				<input type="hidden" id="gambar_lama" name="gambar_lama" value="<?= $dataBarang['gambar_produk'] ?>">
 				<div class="form-group">
-					<label for="namabarang">Nama Barang</label>
-					<input type="text" class="form-control" id="namabarang" name="namabarang" placeholder="Nama Barang" value="<?= $data['nama_produk'] ?>">
+					<label for="namabarang">Nama Barang<?php echo $dataBarang['nama_produk']; ?></label>
+					<input type="text" class="form-control" id="namabarang" name="namabarang" placeholder="Nama Barang" value="<?= $dataBarang['nama_produk'] ?>">
 				</div>
 				<div class="form-group">
 					<label for="kategori">Kategori Barang</label>
@@ -95,21 +90,21 @@ if (isset($_POST['submit'])) {
 						<?php
 						foreach ($rows as $opsi) :
 							?>
-							<option value="<?= $opsi['id_kategori'] ?>" <?= ($data["id_kategori"] == $opsi['id_kategori'] ? 'selected' : ''); ?>><?= $opsi['nama_kategori'] ?></option>
+							<option value="<?= $opsi['id_kategori'] ?>" <?= ($dataBarang["id_kategori"] == $opsi['id_kategori'] ? 'selected' : ''); ?>><?= $opsi['nama_kategori'] ?></option>
 						<?php endforeach ?>
 					</select>
 				</div>
 				<div class="form-group ">
 					<label for="harga" name="harga ">Harga Satuan</label>
-					<input type="number" class="form-control " id=" harga " name="harga" autocomplete="off" value="<?= $data['harga_satuan'] ?>">
+					<input type="number" class="form-control " id=" harga " name="harga" autocomplete="off" value="<?= $dataBarang['harga_satuan'] ?>">
 				</div>
 				<div class=" form-group ">
 					<label for=" stok">Stok Barang</label>
-					<input type="number" class="form-control" id="stok" name="stok" value="<?= $data['quantity'] ?>">
+					<input type="number" class="form-control" id="stok" name="stok" value="<?= $dataBarang['quantity'] ?>">
 				</div>
 				<div class=" form-group ">
 					<label for=" deskripsi ">Deskripsi Barang</label>
-					<textarea class=" form-control " id=" deskripsi " name="deskripsi" rows=" 4 "><?= $data['deskripsi'] ?></textarea>
+					<textarea class=" form-control " id=" deskripsi " name="deskripsi" rows=" 4 "><?= $dataBarang['deskripsi'] ?></textarea>
 				</div>
 
 				<!-- <button class=" btn bt n -success   w-1 00" type ="subm it">Tambah Barang</button> -->
@@ -117,7 +112,7 @@ if (isset($_POST['submit'])) {
 			<div class=" mt-2 ml-4 col-sm-4">
 				<div class="bg-white shadow rounded p-4 ">
 					<label>Foto Barang</label>
-					<img src="../img/barang/<?= $data['gambar_produk'] ?>" alt="" class="img-thumbnail rounded">
+					<img src="../img/barang/<?= $dataBarang['gambar_produk'] ?>" alt="" class="img-thumbnail rounded">
 					<div class="input-group">
 						<div class="custom-file">
 							<input type="file" class="custom-file-input " name="foto" id="fotobarang">

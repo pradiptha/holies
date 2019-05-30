@@ -5,15 +5,15 @@ $rows = [];
 while ($row = mysqli_fetch_assoc($sql)) {
     $rows[] = $row;
 }
-if (isset($_SESSION['id'])) {
-    $id = $_SESSION['id'];
-    $sql = "SELECT *FROM user INNER JOIN detail_user USING(id_user) WHERE id_user='$id'";
-    $result = mysqli_fetch_assoc(mysqli_query($conn, $sql));
-    $nama = $result['nama'];
-    $alamat = $result['alamat'];
-    $email = $result['email'];
-    $telp = $result['telp'];
-}
+// if (isset($_SESSION['id'])) {
+//     $id = $_SESSION['id'];
+//     $sql = "SELECT *FROM user INNER JOIN detail_user USING(id_user) WHERE id_user='$id'";
+//     $result = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+//     $nama = $result['nama'];
+//     $alamat = $result['alamat'];
+//     $email = $result['email'];
+//     $telp = $result['telp'];
+// }
 ?>
 
 
@@ -67,8 +67,8 @@ if (isset($_SESSION['id'])) {
                         <?php endif ?>
                         <li class="nav-item dropdown account-name ml-lg-2">
                             <a class="nav-link dropdown-toggle text-white nav-img-acc" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="../img/profile/<?= $data['foto'] ?>" alt="" class="nav-img-acc mr-lg-2 rounded-circle">
-                                <?= $nama ?>
+                                <img src="../img/profile/<?= $data['foto_profil'] ?>" alt="" class="nav-img-acc mr-lg-2 rounded-circle">
+                                <?= $data['nama'] ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <?php if ($_SESSION['type'] === 'customer') : ?>
