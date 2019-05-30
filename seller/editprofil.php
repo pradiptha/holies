@@ -5,7 +5,6 @@ $sql = mysqli_query($conn, "SELECT * FROM user INNER JOIN detail_user USING(id_u
 $data = mysqli_fetch_assoc($sql);
 // var_dump($data);
 if (isset($_POST['submit'])) {
-    var_dump($_POST);
     $nama = mysqli_real_escape_string($conn, $_POST['nama']);
     $jk = $_POST['jenis-kelamin'];
     $telp = mysqli_real_escape_string($conn, $_POST['telp']);
@@ -15,17 +14,15 @@ if (isset($_POST['submit'])) {
     $confirmPassword = $_POST['password'];
     $gambarLama = mysqli_real_escape_string($conn, $_POST['gambar_lama']);
 
-    $error = $_FILES['foto']['error'];
+    $error = $_FILES['foto_profil']['error'];
     if ($error === 4) {
         $gambar = $gambarLama;
-        echo "gambarlama";
     } else {
-        echo "gambarbaru";
-        $namaFile = $_FILES['foto']['name'];
-        $tmp = $_FILES['foto']['tmp_name'];
-        $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+        $namaFile = $_FILES['foto_profil']['name'];
+        $tmp = $_FILES['foto_profil']['tmp_name'];
+        $ekstensiGambarValid = ['jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG'];
         $ekstensiGambar = explode('.', $namaFile);
-        $ekstensiGambar = strtolower(end($ekstensiGambar));
+        $ekstensiGambar = strtolower((end($ekstensiGambar)));
         $namaFileBaru = uniqid();
         $gambar = $namaFileBaru . '.' . $ekstensiGambar;
         if (in_array($ekstensiGambar, $ekstensiGambarValid)) {
@@ -38,7 +35,7 @@ if (isset($_POST['submit'])) {
                                 alamat = '$alamat',
                                 telp = '$telp',
                                 email = '$email',
-                                foto = '$gambar' WHERE id_user = '$id_user' ");
+                                foto_profil = '$gambar' WHERE id_user = '$id_user' ");
     header("location: akunsaya.php");
 }
 ?>
@@ -69,14 +66,14 @@ if (isset($_POST['submit'])) {
         <div class="row justify-content-md-center">
             <div class="col col-lg-8 shadow m-2 bg-white rounded p-4">
                 <form method="post" action="" enctype="multipart/form-data">
-                    <input type="hidden" name="gambar_lama" value="<?= $data['foto'] ?>">
+                    <input type="hidden" name="gambar_lama" value="<?= $data['foto_profil'] ?>">
                     <div class="form-group">
                         <label for="exampleFormControlFile1">Foto Profil</label><br>
-                        <img src="../img/profile/<?= $data['foto'] ?>" class="img-thumbnail my-2" style="max-width:150px;" alt="">
+                        <img src="../img/profile/<?= $data['foto_profil'] ?>" class="img-thumbnail my-2" style="max-width:150px;" alt="">
                     </div>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input " name="foto" id="fotobarang">
-                        <label class="custom-file-label" for="fotobarang">Choose file</label>
+                        <input type="file" class="custom-file-input " name="foto_profil" id="foto_profil">
+                        <label class="custom-file-label" for="foto_profil">Choose file</label>
                     </div>
                     <div class="form-group">
                         <label for="nama">Nama</label>

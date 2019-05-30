@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
 		$namaFileBaru = uniqid();
 		$gambar = $namaFileBaru . '.' . $ekstensiGambar;
 		if (in_array($ekstensiGambar, $ekstensiGambarValid)) {
-			move_uploaded_file($tmp, '../img/barang/' . $namaFileBaru);
+			move_uploaded_file($tmp, '../img/barang/' . $gambar);
 		}
 	}
 	//form
@@ -36,13 +36,13 @@ if (isset($_POST['submit'])) {
 	$harga = $_POST['harga'];
 	$stok = $_POST['stok'];
 	$deskripsi = mysqli_real_escape_string($conn, $_POST['deskripsi']);
-	$sql = "INSERT INTO produk(id_seller,nama_produk,deskripsi,quantity,harga_satuan) VALUES ('$id_seller', '$namaBarang','$deskripsi','$stok','$harga')";
+	$sql = "INSERT INTO produk(id_seller,nama_produk,deskripsi,quantity,harga_satuan) VALUES ('$id_seller','$namaBarang','$deskripsi','$stok','$harga')";
 	if (mysqli_query($conn, $sql)) {
 		$last_id = mysqli_insert_id($conn);
-		$sql2 = " INSERT INTO gmbr_produk(id_produk,gambar_produk) VALUES('$last_id','$gambar')";
-		$sql3  = "INSERT INTO produk_kategori(id_produk,id_kategori) VALUES('$last_id','$kategori')";
+		$sql1 = " INSERT INTO gmbr_produk(id_produk,gambar_produk) VALUES('$last_id','$gambar')";
+		$sql2  = "INSERT INTO produk_kategori(id_produk,id_kategori) VALUES('$last_id','$kategori')";
+		mysqli_query($conn, $sql1);
 		mysqli_query($conn, $sql2);
-		mysqli_query($conn, $sql3);
 	}
 	header("location: index.php");
 }

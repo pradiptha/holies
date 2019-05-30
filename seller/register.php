@@ -82,7 +82,7 @@ if (isset($_POST['submit'])) {
     if (mysqli_query($conn, $sql)) {
         $temp = mysqli_fetch_assoc(mysqli_query($conn, "SELECT id_user FROM user ORDER BY id_user  DESC LIMIT 1"));
         $number = $temp["id_user"];
-        $sql1 = "INSERT INTO detail_user(id_user,nama,jk,alamat,telp,email) VALUES ('$number','$nama','$jeniskelamin','$alamat','$telp','$email')";
+        $sql1 = "INSERT INTO detail_user(id_user,nama,jk,alamat,telp,email,foto_profil) VALUES ('$number','$nama','$jeniskelamin','$alamat','$telp','$email','nophoto.png')";
         mysqli_query($conn, $sql1);
         $sql2 = "INSERT INTO seller(id_user) VALUES ('$number')";
         mysqli_query($conn, $sql2);

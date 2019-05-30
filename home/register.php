@@ -86,7 +86,8 @@ if (isset($_POST['submit'])) {
         $number = $temp["id_user"];
         $sql1 = "INSERT INTO detail_user(id_user,nama,jk,alamat,telp,email) VALUES ('$number','$nama','$jeniskelamin','$alamat','$telp','$email')";
         mysqli_query($conn, $sql1);
-        header("login.php");
+        header("location: login.php");
+        echo "oke";
     }
 }
 ?>
