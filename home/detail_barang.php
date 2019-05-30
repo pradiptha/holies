@@ -4,8 +4,6 @@ if (isset($_SESSION['id'])) {
 	$id = $_SESSION['id'];
 	$sql = "SELECT *FROM user INNER JOIN detail_user USING(id_user) WHERE id_user='$id'";
 	$data = mysqli_fetch_assoc(mysqli_query($conn, $sql));
-	// var_dump($result);
-	$TAMBAH = 0;
 }
 ?>
 
@@ -43,7 +41,7 @@ if (isset($_SESSION['id'])) {
 					<p class="text-secondary">Masukkan jumlah yang diinginkan</p>
 					<button type="button" class="btn btn-primary btn-sm bg-success float-left">-</button>
 					<span class="border border-secondary float-left box2">
-						<p class="text-secondary text-center"><?= $TAMBAH?></p>
+						<p class="text-secondary text-center">0</p>
 					</span>
 					<button type="button" class="btn btn-secondary btn-sm bg-success float-left">+</button>
 					<button type="button" class="btn btn-success btn-lg btn-block">BELI SEKARANG</button>
