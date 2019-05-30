@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
 			move_uploaded_file($tmp, '../img/barang/' . $gambar);
 		}
 	}
-	echo "idproduk = " . $namaBarang . " " . "deskripsi = " . $deskripsi . " " . $id_produk;
+	// echo "idproduk = " . $namaBarang . " " . "deskripsi = " . $deskripsi . " " . $id_produk;
 	$sql = "UPDATE produk SET nama_produk='$namaBarang',deskripsi='$deskripsi' WHERE id_produk='$id_produk'";
 	if (mysqli_query($conn, $sql)) {
 		$sql1 = "UPDATE seller_produk SET quantity = '$stok', harga_satuan = '$harga' WHERE id_produk = '$id_produk' ";

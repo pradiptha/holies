@@ -1,5 +1,12 @@
 <?php
-
+$host = 'localhost';
+$user = 'root';
+$pass = '';
+$db = 'db_holies';
+$conn = mysqli_connect($host, $user, $pass, $db);
+$id_user = $_SESSION['id'];
+$sql = mysqli_query($conn, "SELECT * FROM detail_user WHERE id_user = '$id_user' ");
+$data = mysqli_fetch_assoc($sql);
 ?>
 
 <!DOCTYPE html>
@@ -33,10 +40,10 @@
     </nav>
     <div class="shadow mb-5 bg-white rounded-bottom dashboard p-0">
         <div class="text-center mt-3">
-            <img src="../img/mark.png" class="PP" alt="PP">
+            <img src="../img/profile/<?= $data['foto'] ?>" class="PP" style="object-fit:cover;" alt="PP">
         </div>
         <div class="username">
-            <h1><?= $_SESSION['username'] ?></h1>
+            <h1><?= $data['nama'] ?></h1>
         </div>
         <div class="list-group px-3">
             <a href="index.php" class="list-group-item list-group-item-action text-center">Home</a>
