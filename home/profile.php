@@ -57,7 +57,7 @@ if (isset($_SESSION['id'])) {
 							</tr>
 						</table>
 					</div>
-					<i class=" m-1 fas fa-pencil-alt text-success float-right"></i>
+					<a href="editprofil.php"><i class=" m-1 fas fa-pencil-alt text-success float-right"></i></a>
 				</div>
 				<div class="shadow mb-3 bg-white rounded data-diri p-3">
 					<div style="border-bottom: solid grey 1px;">
