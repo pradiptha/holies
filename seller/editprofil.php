@@ -5,8 +5,6 @@ $sql = mysqli_query($conn, "SELECT * FROM user INNER JOIN detail_user USING(id_u
 $data = mysqli_fetch_assoc($sql);
 // var_dump($data);
 if (isset($_POST['submit'])) {
-    var_dump($_POST);
-    var_dump($_FILES);
     $nama = mysqli_real_escape_string($conn, $_POST['nama']);
     $jk = $_POST['jenis-kelamin'];
     $telp = mysqli_real_escape_string($conn, $_POST['telp']);
@@ -19,9 +17,7 @@ if (isset($_POST['submit'])) {
     $error = $_FILES['foto_profil']['error'];
     if ($error === 4) {
         $gambar = $gambarLama;
-        echo "gambarlama";
     } else {
-        echo "gambarbaru";
         $namaFile = $_FILES['foto_profil']['name'];
         $tmp = $_FILES['foto_profil']['tmp_name'];
         $ekstensiGambarValid = ['jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG'];
@@ -40,7 +36,7 @@ if (isset($_POST['submit'])) {
                                 telp = '$telp',
                                 email = '$email',
                                 foto_profil = '$gambar' WHERE id_user = '$id_user' ");
-    // header("location: akunsaya.php");
+    header("location: akunsaya.php");
 }
 ?>
 
