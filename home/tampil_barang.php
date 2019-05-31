@@ -3,10 +3,12 @@ include '../php/config.php';
 
 if (isset($_GET['id_kategori'])) {
   $idkategori = $_GET['id_kategori'];
-  $sql1 = mysqli_query($conn, "SELECT * FROM produk INNER JOIN gmbr_produk USING(id_produk) INNER JOIN produk_kategori USING(id_produk) WHERE produk_kategori.id_kategori='$idkategori' LIMIT 8");
+  $sql1 = mysqli_query($conn, "SELECT * FROM produk INNER JOIN gmbr_produk USING(id_produk) INNER JOIN produk_kategori USING(id_produk) WHERE produk_kategori.id_kategori='$idkategori' ");
 } else if (isset($_GET['cari'])) {
   $ketemu = $_GET['cari'];
-  $sql1 = mysqli_query($conn, "SELECT * FROM produk INNER JOIN gmbr_produk USING(id_produk) WHERE produk.nama_produk LIKE'%$ketemu%' LIMIT 8");
+  $sql1 = mysqli_query($conn, "SELECT * FROM produk INNER JOIN gmbr_produk USING(id_produk) WHERE produk.nama_produk LIKE'%$ketemu%' ");
+} elseif (isset($_GET['terbaru'])) {
+  $sql1 = mysqli_query($conn, "SELECT * FROM produk INNER JOIN gmbr_produk USING(id_produk) ORDER BY id_produk DESC ");
 }
 
 $id_user = $_SESSION['id'];

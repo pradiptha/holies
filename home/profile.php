@@ -85,24 +85,30 @@ if (isset($_SESSION['id'])) {
 			</div>
 			<div class="col-sm-4">
 				<div class="shadow mb-3 bg-white rounded ikon-samping p-3 mt-5">
-					<div class="kolom">
-						<div class="text-center">
-							<i class="fas fa-heart fa-1x text-success"></i>
+					<a href="fav.php" class="text-decoration-none">
+						<div class="kolom pt-2">
+							<div class="text-center">
+								<i class="fas fa-heart fa-1x text-success"></i>
+							</div>
+							<h6 class="text-center text-success">Favorite Saya</h6>
 						</div>
-						<h6 class="text-center text-success">Favorite Saya</h6>
-					</div>
-					<div class="kolom">
-						<div class="text-center">
-							<i class="fas fa-shopping-cart fa-1x text-success"></i>
+					</a>
+					<a href="cart.php" class="text-decoration-none">
+						<div class="kolom pt-2">
+							<div class="text-center">
+								<i class="fas fa-shopping-cart fa-1x text-success"></i>
+							</div>
+							<h6 class="text-center text-success">Keranjang Saya</h6>
 						</div>
-						<h6 class="text-center text-success">Keranjang Saya</h6>
-					</div>
-					<div class="kolom">
-						<div class="text-center">
-							<i class="far fa-envelope fa-1x text-success"></i>
+					</a>
+					<a href="#pesan" class="text-decoration-none">
+						<div class="kolom pt-2">
+							<div class="text-center">
+								<i class="far fa-envelope fa-1x text-success"></i>
+							</div>
+							<h6 class="text-center text-success">Pesan Saya</h6>
 						</div>
-						<h6 class="text-center text-success">Pesan Saya</h6>
-					</div>
+					</a>
 				</div>
 				<h1 class="text-center text-success font-weight-bold mt-4">HOLIES</h1>
 				<h5 class="text-center text-success m-2">Temukan kami di</h5>

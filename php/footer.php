@@ -29,9 +29,6 @@
 		<div class="container">
 			<div class="row ">
 				<div class="col-md-3 segment-one ">
-					<div class="f1">
-						<h3><a href="#" class="text-success">HOLIES</a></h3>
-					</div>
 					<div class="f2">
 						<ul style="list-style-type: none;">
 							<li><a class="text-white" href="../php/bantuan.php">Buka Bantuan</a></li>

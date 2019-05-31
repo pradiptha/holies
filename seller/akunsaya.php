@@ -30,7 +30,7 @@ $telp = $data['telp'];
 		<div class="shadow mb-3 bg-white rounded box1 p-3 clearfix">
 			<div class="gambar-diri float-left">
 				<!-- <img src="../img/profile/<?= $data['foto_profil'] ?>" class="rounded-circle" style="height: 100%; object-fit: cover; "> -->
-				<img src="../img/profile/<?= $data['foto_profil'] ?>" alt="" class="nav-img-acc mr-lg-2 rounded-circle" style="height: 100%; object-fit: cover; ">
+				<img src="../img/profile/<?= $data['foto_profil'] ?>" alt="" class="nav-img-acc mr-lg-2 rounded-circle" style="height: 100%; width: 100%; object-fit: cover; ">
 			</div>
 			<div class="detail float-left ml-3">
 				<h3 class="pl-1"><?= $nama ?></h3>
