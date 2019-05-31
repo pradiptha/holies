@@ -49,7 +49,7 @@ $data = mysqli_fetch_assoc($sql);
             <a href="index.php" class="list-group-item list-group-item-action text-center">Home</a>
             <a href="jual.php" class="list-group-item list-group-item-action text-center">Jual Barang</a>
             <a href="akunsaya.php" class="list-group-item list-group-item-action text-center">Akun Saya</a>
-            <a href="" class="list-group-item list-group-item-action text-center">Pesan</a>
+            <a href="pesanan_masuk.php" class="list-group-item list-group-item-action text-center">Pesanan Masuk</a>
         </div>
         <div class="d-flex justify-content-center p-3">
             <a href="../home/logout.php" class="btn btn-success">LOGOUT</a>
