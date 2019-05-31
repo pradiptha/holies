@@ -69,7 +69,7 @@ while ($row = mysqli_fetch_assoc($sql1)) {
           <?php endforeach ?>
         <?php endif ?>
       <?php else : ?>
-        <div>
+        <div class="bg-white shadow rounded px-5 py-2 mx-auto">
           <h2>Tidak ada Barang</h2>
         </div>
       <?php endif ?>
