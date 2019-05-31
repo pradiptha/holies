@@ -11,6 +11,15 @@ $sql1 = mysqli_query($conn, "SELECT id_produk,id_seller,nama_produk,deskripsi,id
     $dataBarang[] = $row;
     }
     $i=1;
+    if (isset($_POST['submit'])) {
+    	foreach ($dataBarang as $key) :
+ 			$id_ker = $key['id_keranjang'];
+ 			$updateker = mysqli_query($conn,"UPDATE keranjang SET status_produk = 'checkout' WHERE id_keranjang='$id_ker' ");
+    		$query_order = mysqli_query($conn,"INSERT INTO order_detail(id_keranjang,id_customer,status,tgl_transaksi) VALUES ('$id_ker','$id','lunas',now())");
+    	endforeach;
+    	header("location: cart.php");
+	} 
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -95,12 +104,3 @@ $sql1 = mysqli_query($conn, "SELECT id_produk,id_seller,nama_produk,deskripsi,id
 </body>
 
 </html>
-<?php 
-   if (isset($_POST['submit'])) {
-    foreach ($dataBarang as $key) :
- 		$id_ker = $key['id_keranjang'];
- 		$updateker = mysqli_query($conn,"UPDATE keranjang SET status_produk = 'checkout' WHERE id_keranjang='$id_ker' ");
-    	$query_order = mysqli_query($conn,"INSERT INTO order_detail(id_keranjang,id_customer,status,tgl_transaksi) VALUES ('$id_ker','$id','lunas',now())");
-    endforeach;
-	} 
-?>

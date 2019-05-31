@@ -9,7 +9,12 @@ if (isset($_SESSION['id'])) {
 	$alamat = $data['alamat'];
 	$email = $data['email'];
 	$telp = $data['telp'];
-	// var_dump($result);
+	$i=1;
+	$history = mysqli_query($conn,"SELECT produk.nama_produk,keranjang.quantity,order_detail.tgl_transaksi FROM keranjang INNER JOIN produk USING(id_produk) INNER JOIN order_detail USING(id_keranjang) WHERE order_detail.id_customer='$id'");
+	$historysaya = [];
+		while ($row = mysqli_fetch_assoc($history)) {
+    	$historysaya[] = $row;
+	}
 }
 ?>
 
@@ -73,12 +78,15 @@ if (isset($_SESSION['id'])) {
 							</tr>
 						</thead>
 						<tbody>
+							<?php $item = 1;
+                    foreach ($historysaya as $key) : ?>
 							<tr>
-								<td>1</th>
-								<td>12-05-2019</td>
-								<td>Kambing Jantan Hitam</td>
-								<td>5</td>
+								<td><?=$item?></th>
+								<td><?=$key['tgl_transaksi']?></td>
+								<td><?=$key['nama_produk']?></td>
+								<td><?=$key['quantity']?></td>
 							</tr>
+						<?php endforeach ?>
 						</tbody>
 					</table>
 				</div>

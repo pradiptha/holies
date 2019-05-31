@@ -12,7 +12,7 @@ $simpan = mysqli_fetch_assoc(mysqli_query($conn, $query));
 if (isset($_POST['submit'])) {
 	$qty = mysqli_real_escape_string($conn, $_POST['quantity']);
 	$totalhrg = $qty * $simpan['harga_satuan'];
-	$sql1 = mysqli_query($conn, "SELECT * FROM keranjang WHERE id_customer = '$id_user' AND id_produk = '$id_barang' ");
+	$sql1 = mysqli_query($conn, "SELECT * FROM keranjang WHERE id_customer = '$id_user' AND id_produk = '$id_barang' AND status_produk='cart' ");
 	$num_rows = mysqli_num_rows($sql1);
 	if ($num_rows) {
 		$keranjang = mysqli_fetch_assoc($sql1);
