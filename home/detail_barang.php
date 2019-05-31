@@ -28,6 +28,7 @@ if (isset($_POST['submit'])) {
 		header("location: cart.php");
 		die();
 	}
+	header("location: tampil_barang.php?cari=");
 }
 ?>
 
