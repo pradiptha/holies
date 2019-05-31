@@ -10,6 +10,20 @@ $dataBarang = [];
 while ($row = mysqli_fetch_assoc($sql1)) {
 	$dataBarang[] = $row;
 }
+if (isset($_POST['submit'])) {
+	mysqli_begin_transaction($conn, MYSQLI_TRANS_START_READ_ONLY);
+	foreach ($dataBarang as $key) :
+		$id_ker = $key['id_keranjang'];
+		$id_pro = $key['id_produk'];
+		$minusstok = $key['quantity'];
+		$updateker = mysqli_query($conn, "UPDATE keranjang SET status_produk = 'checkout' WHERE id_keranjang='$id_ker' ");
+		$query_order = mysqli_query($conn, "INSERT INTO order_detail(id_keranjang,id_customer,status,tgl_transaksi) VALUES ('$id_ker','$id','lunas',now())");
+		$updatestok = mysqli_query($conn,"UPDATE produk SET quantity = quantity-'$minusstok' WHERE id_produk = '$id_pro' ");
+	endforeach;
+	mysqli_commit($conn);
+	mysqli_close($conn);
+	header("location: finish.php");
+}
 $i = 1;
 ?>
 <!DOCTYPE html>
@@ -95,12 +109,3 @@ $i = 1;
 </body>
 
 </html>
-<?php
-if (isset($_POST['submit'])) {
-	foreach ($dataBarang as $key) :
-		$id_ker = $key['id_keranjang'];
-		$updateker = mysqli_query($conn, "UPDATE keranjang SET status_produk = 'checkout' WHERE id_keranjang='$id_ker' ");
-		$query_order = mysqli_query($conn, "INSERT INTO order_detail(id_keranjang,id_customer,status,tgl_transaksi) VALUES ('$id_ker','$id','lunas',now())");
-	endforeach;
-}
-?>
