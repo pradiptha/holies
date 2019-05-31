@@ -1,10 +1,10 @@
 <?php
 include '../php/config.php';
 
-if (isset($_GET['id_kategori'])){
+if (isset($_GET['id_kategori'])) {
   $idkategori = $_GET['id_kategori'];
   $sql1 = mysqli_query($conn, "SELECT * FROM produk INNER JOIN gmbr_produk USING(id_produk) INNER JOIN produk_kategori USING(id_produk) WHERE produk_kategori.id_kategori='$idkategori' LIMIT 8");
-}else if(isset($_GET['cari'])){
+} else if (isset($_GET['cari'])) {
   $ketemu = $_GET['cari'];
   $sql1 = mysqli_query($conn, "SELECT * FROM produk INNER JOIN gmbr_produk USING(id_produk) WHERE produk.nama_produk LIKE'%$ketemu%' LIMIT 8");
 }
@@ -46,26 +46,32 @@ while ($row = mysqli_fetch_assoc($sql1)) {
     <a href="" class="text-decoration-none">
     </a>
     <div class="row">
-      <?php if ($data_barang) : ?>
-        <?php foreach ($data_barang as $key) : ?>
-          <div class="my-3 col-lg-3">
-            <div class="card shadow-sm">
-              <img class="card-img-top d-block w-100" src="../img/barang/<?= $key['gambar_produk'] ?>" alt="..." style="object-fit: cover;">
-              <div class="card-body">
-                <h5 class="card-title"><?= $key['nama_produk'] ?></h5>
-                <div class="row" style="padding-left: 10px">
-                  <p style="margin-top: 10px; width: 25px;">Rp.</p>
-                  <h2 class="text-success"><?= $key['harga_satuan'] ?></h2>
+      <?php if (isset($data_barang)) : ?>
+        <?php if ($data_barang) : ?>
+          <?php foreach ($data_barang as $key) : ?>
+            <div class="my-3 col-lg-3">
+              <div class="card shadow-sm">
+                <img class="card-img-top d-block w-100" src="../img/barang/<?= $key['gambar_produk'] ?>" alt="..." style="object-fit: cover;">
+                <div class="card-body">
+                  <h5 class="card-title"><?= $key['nama_produk'] ?></h5>
+                  <div class="row" style="padding-left: 10px">
+                    <p style="margin-top: 10px; width: 25px;">Rp.</p>
+                    <h2 class="text-success"><?= $key['harga_satuan'] ?></h2>
+                  </div>
+                  <div class="row" style="padding-left: 10px; height: 20px; margin-bottom: 20px">
+                    <p style="font-size: 14px;">Daerah kab. Badung</p>
+                  </div>
+                  <a href="detail_barang.php?id=<?= $key['id_produk'] ?>" class="btn-sm btn-outline-success">Lihat lebih lanjut</a>
+                  <i class="fas fa-heart fa-lg" aria-hidden="true"></i>
                 </div>
-                <div class="row" style="padding-left: 10px; height: 20px; margin-bottom: 20px">
-                  <p style="font-size: 14px;">Daerah kab. Badung</p>
-                </div>
-                <a href="detail_barang.php?id=<?= $key['id_produk'] ?>" class="btn-sm btn-outline-success">Lihat lebih lanjut</a>
-                <i class="fas fa-heart fa-lg" aria-hidden="true"></i>
               </div>
             </div>
-          </div>
-        <?php endforeach ?>
+          <?php endforeach ?>
+        <?php endif ?>
+      <?php else : ?>
+        <div class="bg-white shadow rounded px-5 py-2 mx-auto">
+          <h2>Tidak ada Barang</h2>
+        </div>
       <?php endif ?>
     </div>
   </div>

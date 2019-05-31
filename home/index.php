@@ -42,27 +42,27 @@ while ($row = mysqli_fetch_assoc($sql1)) {
     <div class="container">
       <h3 class="text-center text-success font-weight-bold">Kategori Holies</h3>
       <div class="row text-success  font-weight-bold justify-content-center" style=" margin-top: 40px">
-        <a href="tampil_barang.php?id_kategori=1">
-          <div class="col-lg-4 text-center">
+        <a href="tampil_barang.php?id_kategori=1" class="text-decoration-none">
+          <div class="mx-4 text-center">
             <img class="shadow imgkategori" src="../img/pakan.png">
-            <div class="media-body">
+            <div class="media-body mt-n2">
               <h3 class="text-center text-success">Ternak</h3>
             </div>
           </div>
         </a>
-        <a href="tampil_barang.php?id_kategori=2">
-          <div class="col-lg-4 text-center">
+        <a href="tampil_barang.php?id_kategori=2" class="text-decoration-none">
+          <div class="mx-4 text-center">
             <img class="shadow imgkategori" src="../img/pakan.png">
-            <div class="media-body">
+            <div class="media-body mt-n2">
               <h3 class="text-center text-success">Pakan</h3>
             </div>
           </div>
         </a>
-        <a href="tampil_barang.php?id_kategori=3">
-          <div class="col-lg-4 text-center">
+        <a href="tampil_barang.php?id_kategori=3" class="text-decoration-none">
+          <div class="mx-4 text-center">
             <img class="shadow imgkategori" src="../img/pakan.png">
-            <div class="media-body">
-              <h3 class="text-center text-success">Alat</h3>
+            <div class="media-body mt-n2">
+              <h3 class="text-success">Alat</h3>
             </div>
           </div>
         </a>
@@ -88,7 +88,7 @@ while ($row = mysqli_fetch_assoc($sql1)) {
                 <div class="row" style="padding-left: 10px; height: 20px; margin-bottom: 20px">
                   <p style="font-size: 14px;">Daerah kab. Badung</p>
                 </div>
-                <a href="detail_barang.php?id=<?= $key['id_produk'] ?>" class="btn-sm btn-outline-success">Lihat lebih lanjut</a>
+                <a href="detail_barang.php?id=<?= $key['id_produk'] ?>" class="btn-sm btn-outline-success text-decoration-none">Lihat lebih lanjut</a>
                 <i class="fas fa-heart fa-lg" aria-hidden="true"></i>
               </div>
             </div>

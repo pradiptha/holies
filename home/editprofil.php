@@ -37,6 +37,7 @@ if (isset($_POST['submit'])) {
                                 email = '$email',
                                 foto_profil = '$gambar' WHERE id_user = '$id_user' ");
     header("location: profile.php");
+    die();
 }
 ?>
 
