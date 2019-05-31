@@ -1,12 +1,11 @@
 <?php
-// session_start();
 $sql = mysqli_query($conn, "SELECT * FROM kategori");
 $rows = [];
 while ($row = mysqli_fetch_assoc($sql)) {
     $rows[] = $row;
 }
-
 ?>
+
 
 
 <!DOCTYPE html>

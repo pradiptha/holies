@@ -17,14 +17,11 @@ if (isset($_POST['submit'])) {
 	if ($num_rows) {
 		$keranjang = mysqli_fetch_assoc($sql1);
 		$id_keranjang = $keranjang['id_keranjang'];
-		$query = mysqli_query($conn, "UPDATE keranjang SET quantity = quantity + '$qty' WHERE id_keranjang = '$id_keranjang' ");
-		// var_dump(mysqli_error($conn));
+		$query = mysqli_query($conn, "UPDATE keranjang SET quantity = quantity + '$qty' WHERE id_keranjang = '$id_keranjang'");
+		$query = mysqli_query($conn, "UPDATE keranjang SET total_harga = total_harga + '$totalhrg' WHERE id_keranjang = '$id_keranjang'");
 	} else {
-		$query2 = "INSERT INTO keranjang (id_customer,id_produk,quantity,total_harga) VALUES ('$id_user','$id_barang','$qty','$totalhrg') ";
+		$query2 = "INSERT INTO keranjang (id_customer,id_produk,quantity,total_harga,status_produk) VALUES ('$id_user','$id_barang','$qty','$totalhrg','cart') ";
 		if (mysqli_query($conn, $query2)) {
-			// var_dump(mysqli_error($conn));
-		} else {
-			echo "gagal";
 		}
 	}
 	if ($_POST['submit'] === 'buy') {

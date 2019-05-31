@@ -6,7 +6,7 @@ if (isset($_SESSION['id'])) {
     $data = mysqli_fetch_assoc(mysqli_query($conn, $sql));
     // var_dump($result);
 }
-$sql1 = mysqli_query($conn, "SELECT id_produk,id_seller,nama_produk,deskripsi,id_keranjang,id_customer,keranjang.quantity as quantity,total_harga,gambar_produk,harga_satuan FROM keranjang INNER JOIN produk USING(id_produk) INNER JOIN gmbr_produk USING(id_produk) WHERE id_customer = $id");
+$sql1 = mysqli_query($conn, "SELECT id_produk,id_seller,nama_produk,deskripsi,id_keranjang,id_customer,keranjang.quantity as quantity,total_harga,gambar_produk,harga_satuan FROM keranjang INNER JOIN produk USING(id_produk) INNER JOIN gmbr_produk USING(id_produk) WHERE id_customer = $id AND keranjang.status_produk = 'cart' ");
 $dataBarang = [];
 while ($row = mysqli_fetch_assoc($sql1)) {
     $dataBarang[] = $row;
