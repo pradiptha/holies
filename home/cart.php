@@ -5,7 +5,14 @@ if (isset($_SESSION['id'])) {
     $sql = "SELECT *FROM user INNER JOIN detail_user USING(id_user) WHERE id_user='$id'";
     $data = mysqli_fetch_assoc(mysqli_query($conn, $sql));
     // var_dump($result);
-} ?>
+}
+$sql1 = mysqli_query($conn, "SELECT id_produk,id_seller,nama_produk,deskripsi,id_keranjang,id_customer,keranjang.quantity as quantity,total_harga,gambar_produk,harga_satuan FROM keranjang INNER JOIN produk USING(id_produk) INNER JOIN gmbr_produk USING(id_produk) WHERE id_customer = $id");
+$dataBarang = [];
+while ($row = mysqli_fetch_assoc($sql1)) {
+    $dataBarang[] = $row;
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -30,26 +37,37 @@ if (isset($_SESSION['id'])) {
         <div class="row mt-3">
             <div class="col-sm-8">
                 <div class="shadow bg-white rounded px-3 py-1">
-                    <?php for ($i = 1; $i < 4; $i++) : ?>
+                    <?php $item = 0;
+                    $total_harga = 0;
+                    foreach ($dataBarang as $key) : ?>
                         <div class="mb-3 mt-3">
                             <div class="row">
                                 <div class="col-sm-2">
-                                    <img src="../img/buy.png" class="img-thumbnail mr-3" alt="">
+                                    <img src="../img/barang/<?= $key['gambar_produk'] ?>" class="img-thumbnail mr-3" alt="" style="height: 100px; object-fit: cover;">
                                 </div>
                                 <div class="col-sm-7">
-                                    <h5>Nutrisi Harian Anak Ayam</h5>
-                                    <p>Pakan Ayam</p>
-                                    <h5 class="text-success">Rp 9.000</h5>
+                                    <h5><?= $key['nama_produk'] ?></h5>
+                                    <p><?= $key['deskripsi'] ?></p>
+                                    <h5 class="text-success">Rp. <?php echo $key['total_harga'];
+                                                                    $total_harga += $key['total_harga']; ?></h5>
                                 </div>
                                 <div class="col-sm-3">
-                                    <h5>Qty : 5</h5>
-                                    <i class="fas fa-trash text-danger d-block mb-2"></i>
-                                    <i class="fas fa-save text-success"></i>
+                                    <form action="update_cart.php" method="POST">
+                                        <input type="hidden" name="harga_satuan" value="<?= $key['harga_satuan'] ?>">
+                                        <input type="hidden" name="id_keranjang" value="<?= $key["id_keranjang"] ?>">
+                                        <div class="clearfix">
+                                            <label for="qty" class="float-left">Qty :</label>
+                                            <input type="number" name="quantity" class="border-0 ml-2 w-25" value="<?php echo $key['quantity'];
+                                                                                                                    $item += $key['quantity']; ?>">
+                                            <button class="border-0 bg-transparent left" type="submit" name="submit"><i class="fas fa-save text-success"></i></button>
+                                        </div>
+                                        <a href="delete_cart.php?id=<?= $key["id_keranjang"]; ?>"><i class="fas fa-trash text-danger d-block mb-2"></i></a>
+                                    </form>
                                 </div>
                             </div>
                             <div style="border-bottom: 1px solid #eaeaea;"></div>
                         </div>
-                    <?php endfor ?>
+                    <?php endforeach ?>
                 </div>
             </div>
             <div class="col-sm-4">
@@ -57,12 +75,12 @@ if (isset($_SESSION['id'])) {
                     <h5>Rincian Pesanan</h5>
                     <hr>
                     <h6 class="float-left">Total Item </h6>
-                    <h4 class="text-right text-success">15</h4>
+                    <h4 class="text-right text-success"><?= $item ?></h4>
                     <h6 class="float-left">Total Harga</h6>
-                    <h4 class="text-right text-success">Rp. 100000</h4>
+                    <h4 class="text-right text-success">Rp. <?= $total_harga ?></h4>
                     <!-- <div class="btn d-block">
-                        <h6 class="text-center text-success">Favorite Saya</h6>
-                    </div> -->
+                            <h6 class="text-center text-success">Favorite Saya</h6>
+                        </div> -->
                     <div class="mx-auto w-100">
                         <a href="checkout.php" class="btn btn-success mt-3 w-100">Bayar Sekarang</a>
                     </div>
