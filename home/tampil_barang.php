@@ -1,9 +1,18 @@
 <?php
 include '../php/config.php';
+
+if (isset($_GET['id_kategori'])){
+  $idkategori = $_GET['id_kategori'];
+  $sql1 = mysqli_query($conn, "SELECT * FROM produk INNER JOIN gmbr_produk USING(id_produk) INNER JOIN produk_kategori USING(id_produk) WHERE produk_kategori.id_kategori='$idkategori' LIMIT 8");
+}else if(isset($_GET['cari'])){
+  $ketemu = $_GET['cari'];
+  $sql1 = mysqli_query($conn, "SELECT * FROM produk INNER JOIN gmbr_produk USING(id_produk) WHERE produk.nama_produk LIKE'%$ketemu%' LIMIT 8");
+}
+
 $id_user = $_SESSION['id'];
 $sql = mysqli_query($conn, "SELECT * FROM detail_user WHERE id_user = '$id_user' ");
 $data = mysqli_fetch_assoc($sql);
-$sql1 = mysqli_query($conn, "SELECT * FROM produk INNER JOIN gmbr_produk USING(id_produk) LIMIT 8");
+
 $rows = [];
 while ($row = mysqli_fetch_assoc($sql1)) {
   $data_barang[] = $row;
@@ -33,45 +42,8 @@ while ($row = mysqli_fetch_assoc($sql1)) {
   <!-- Navigation -->
   <?php include 'nav.php' ?>
   <!-- Page Content -->
-  <div class="bgimg" style="background-image: url('../img/farmer.jpg'); z-index: -1">
-  </div>
-  <div class="container-fluid text-center" style=" padding-top:150px; color: white; height: 512px">
-    <h1 class="display-3">DAPATKAN KEMUDAHAN BERSAMA HOLIES</h1>
-  </div>
-  <div class=" container-fluid bg-white shadow-lg" style="margin-top: 100px; padding-top: 40px; height: 400px">
-    <div class="container">
-      <h3 class="text-center text-success font-weight-bold">Kategori Holies</h3>
-      <div class="row text-success  font-weight-bold justify-content-center" style=" margin-top: 40px">
-        <a href="tampil_barang.php?id_kategori=1">
-          <div class="col-lg-4 text-center">
-            <img class="shadow imgkategori" src="../img/pakan.png">
-            <div class="media-body">
-              <h3 class="text-center text-success">Ternak</h3>
-            </div>
-          </div>
-        </a>
-        <a href="tampil_barang.php?id_kategori=2">
-          <div class="col-lg-4 text-center">
-            <img class="shadow imgkategori" src="../img/pakan.png">
-            <div class="media-body">
-              <h3 class="text-center text-success">Pakan</h3>
-            </div>
-          </div>
-        </a>
-        <a href="tampil_barang.php?id_kategori=3">
-          <div class="col-lg-4 text-center">
-            <img class="shadow imgkategori" src="../img/pakan.png">
-            <div class="media-body">
-              <h3 class="text-center text-success">Alat</h3>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
   <div class="mb-5 mt-5 container ">
     <a href="" class="text-decoration-none">
-      <h3 class="text-success">Produk Terbaru</h3>
     </a>
     <div class="row">
       <?php if ($data_barang) : ?>
