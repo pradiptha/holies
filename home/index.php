@@ -71,7 +71,7 @@ while ($row = mysqli_fetch_assoc($sql1)) {
     </div>
   </div>
   <div class="mb-5 mt-5 container ">
-    <a href="" class="text-decoration-none">
+    <a href="tampil_barang.php?terbaru=true" class="text-decoration-none">
       <h3 class="text-success">Produk Terbaru</h3>
     </a>
     <div class="row">
@@ -85,9 +85,6 @@ while ($row = mysqli_fetch_assoc($sql1)) {
                 <div class="row" style="padding-left: 10px">
                   <p style="margin-top: 10px; width: 25px;">Rp.</p>
                   <h2 class="text-success"><?= $key['harga_satuan'] ?></h2>
-                </div>
-                <div class="row" style="padding-left: 10px; height: 20px; margin-bottom: 20px">
-                  <p style="font-size: 14px;">Daerah kab. Badung</p>
                 </div>
                 <a href="detail_barang.php?id=<?= $key['id_produk'] ?>" class="btn-sm btn-outline-success text-decoration-none">Lihat lebih lanjut</a>
                 <i class="fas fa-heart fa-lg" aria-hidden="true"></i>
