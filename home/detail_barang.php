@@ -9,6 +9,7 @@ if (isset($_SESSION['id'])) {
 }
 $query = "SELECT * FROM produk INNER JOIN gmbr_produk USING (id_produk) INNER JOIN seller USING (id_seller) INNER JOIN detail_user USING (id_user) WHERE id_produk='$id_barang'";
 $simpan = mysqli_fetch_assoc(mysqli_query($conn, $query));
+$qtySelect = mysqli_fetch_assoc(mysqli_query($conn, "SELECT quantity FROM produk WHERE id_produk='$id_barang'"))['quantity'];
 if (isset($_POST['submit'])) {
 	$qty = mysqli_real_escape_string($conn, $_POST['quantity']);
 	$totalhrg = $qty * $simpan['harga_satuan'];
@@ -21,8 +22,7 @@ if (isset($_POST['submit'])) {
 		$query = mysqli_query($conn, "UPDATE keranjang SET total_harga = total_harga + '$totalhrg' WHERE id_keranjang = '$id_keranjang'");
 	} else {
 		$query2 = "INSERT INTO keranjang (id_customer,id_produk,quantity,total_harga,status_produk) VALUES ('$id_user','$id_barang','$qty','$totalhrg','cart') ";
-		if (mysqli_query($conn, $query2)) {
-		}
+		if (mysqli_query($conn, $query2)) { }
 	}
 	if ($_POST['submit'] === 'buy') {
 		header("location: cart.php");
@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
 					<p class="text-left float-left">
 						<h3 class="text-success font-weight-bold">Rp. <?= $simpan['harga_satuan'] ?></h3>
 					</p>
-					<p class="text-secondary">Tersedia <?= $simpan['quantity'] ?> /satuan</p>
+					<p class="text-secondary">Tersedia <?= $qtySelect ?> </p>
 					<p class="text-secondary">Masukkan jumlah yang diinginkan</p>
 					<form method="post" action="">
 						<div class="hitung">
@@ -139,6 +139,7 @@ if (isset($_POST['submit'])) {
 				parent.find('input[name=' + fieldName + ']').val(0);
 			}
 		}
+
 		function decrementValue(e) {
 			e.preventDefault();
 			var fieldName = $(e.target).data('field');

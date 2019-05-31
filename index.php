@@ -90,8 +90,9 @@ if (isset($_SESSION['username'])) {
         <img src="img/logo.png" alt="Working Space" class="img-fluid logo">
       </div>
       <div class="col-lg-5">
-        <h2>You Can <span>Work</span> Every <span>Where</span></h2>
-        <p>Bekerja dengan suasana hati yang lebih asik, menyenangkan
+        <h2> With <span>Holies</span></h2>
+         <h2>Do <span>Everything</span></h2>
+        <p>Mari menjadi bagian dari Holies yang menyenangkan
           dan mempelajari hal baru setiap harinya.</p>
         <a href="seller/register.php" class="btn btn-primary tombol bg-success">Register as Seller</a>
       </div>
