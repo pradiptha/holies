@@ -18,13 +18,22 @@ while($data = mysqli_fetch_assoc($sqli))
 }
 
 //tambah kategori
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) :
 	
 	//form
 	$namakategori = mysqli_real_escape_string($conn, $_POST['namakategori']);
-	$sql = mysqli_query($conn, "INSERT INTO kategori(nama_kategori) VALUES ('$namakategori')");
-	header("location: daftar-kategori.php");
-}
+	if(!empty($namakategori)) :
+		$sql = mysqli_query($conn, "INSERT INTO kategori(nama_kategori) VALUES ('$namakategori')");
+		header("location: daftar-kategori.php");
+	
+	else : ?>
+		<script>
+		function myFunction() {
+		  	alert("Data Gagal Ditambahkan!");
+		}
+		</script>
+	<?php endif;
+endif
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +92,7 @@ if (isset($_POST['submit'])) {
 	    			<div class="input-group mb-3">
 					  	<input name="namakategori" type="text" class="form-control" placeholder="Kategori" aria-describedby="button-addon2">
 					  	<div class="input-group-append">
-					    	<button class="btn btn-outline-secondary" type="submit" id="button-addon2" name="submit">Submit</button>
+					    	<button onclick="myFunction()" class="btn btn-outline-secondary" type="submit" id="button-addon2" name="submit">Submit</button>
 					  	</div>
 					</div>
 	    		</form>
