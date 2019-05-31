@@ -67,9 +67,6 @@ if (isset($_POST['submit'])) {
 						      			<a href="edit-kategori.php?id_kategori=<?php echo $key['id_kategori'] ?>">
 						      				<i class="fas fa-pen float-left text-success"></i>
 						      			</a>
-						      			<a href="hapuskategori.php?id_kategori=<?php echo $key['id_kategori'] ?>">
-						      				<i class="fas fa-trash float-left text-success ml-4"></i>
-						      			</a>
 						     		</td>
 						    	</tr>
 						 	</tbody>
