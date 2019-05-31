@@ -13,8 +13,6 @@ $sql2 = mysqli_query($conn, "SELECT * FROM detail_user INNER JOIN user ON detail
 
  //buat array
 $customer = [];
-$datacust = [];
-$datasell = [];
 $seller = [];
 
 //perulangan untuk mengubah data dari hasil query menjadi array
@@ -53,8 +51,8 @@ while($seller = mysqli_fetch_assoc($sql2))
 				 	<thead class="thead-light">
 				    	<tr>
 				      		<th>No</th>
+					      	<th>Id User</th>
 					      	<th>Nama</th>
-					      	<th>Action</th>
 				    	</tr>
 				  	</thead>
 				  	<?php if ($datasell) : ?>
@@ -62,12 +60,8 @@ while($seller = mysqli_fetch_assoc($sql2))
 					  	<tbody>
 					    	<tr>
 					      		<td><?php echo $i ?></th>
+					      		<td><?php echo $key['id_user'] ?></td>
 					      		<td><?php echo $key['nama'] ?></td>
-					      		<td>
-					      			<a href="hapususer.php?iduser=<?php echo $key['id_user'] ?>">
-					      				<i class="fas fa-trash float-left text-success"></i>
-					      			</a>
-					      		</td>
 					    	</tr>
 					 	</tbody>
 					 	<?php $i++; endforeach ?>
@@ -82,8 +76,9 @@ while($seller = mysqli_fetch_assoc($sql2))
 				 	<thead class="thead-light">
 				    	<tr>
 				      		<th>No</th>
+				      		<th>Id User</th>
 					      	<th>Nama</th>
-					      	<th>Action</th>
+					      	
 				    	</tr>
 				  	</thead>
 				  	<?php if ($datacust) : ?>
@@ -91,12 +86,8 @@ while($seller = mysqli_fetch_assoc($sql2))
 					  	<tbody>
 					    	<tr>
 					      		<td><?php echo $i ?></th>
+					      		<td><?php echo $key['id_user'] ?></td>
 					      		<td><?php echo $key['nama'] ?></td>
-					      		<td>
-					      			<a href="hapususer.php?iduser=<?php echo $key['id_user'] ?>">
-					      				<i class="fas fa-trash float-left text-success"></i>
-					      			</a>
-					      		</td>
 					    	</tr>
 					 	</tbody>
 					 	<?php $i++; endforeach ?>
