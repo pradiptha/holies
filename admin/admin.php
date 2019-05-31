@@ -5,7 +5,6 @@ if (isset($_SESSION)) {
         header('Location: ../index.php');
     }
 }
-var_dump($_SESSION);
 $host = 'localhost';
 $user = 'root';
 $pass = '';

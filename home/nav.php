@@ -5,6 +5,7 @@ $rows = [];
 while ($row = mysqli_fetch_assoc($sql)) {
     $rows[] = $row;
 }
+
 ?>
 
 
@@ -40,12 +41,12 @@ while ($row = mysqli_fetch_assoc($sql)) {
                     <div class="dropdown-menu">
                         <?php
                         foreach ($rows as $opsi) : ?>
-                            <a class="dropdown-item" href="barang.php?kategori=<?= $opsi['id_kategori'] ?>"><?= $opsi['nama_kategori'] ?></a>
+                            <a class="dropdown-item" href="tampil_barang.php?id_kategori=<?= $opsi['id_kategori'] ?>"><?= $opsi['nama_kategori'] ?></a>
                         <?php endforeach ?>
                     </div>
                 </div>
-                <form class="form-inline my-3 my-lg-0 mr-auto">
-                    <input id="navbar-search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <form method="GET" action="tampil_barang.php" class="form-inline my-3 my-lg-0 mr-auto">
+                    <input name="cari" id="navbar-search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search..</button>
                 </form>
                 <ul class="navbar-nav">
