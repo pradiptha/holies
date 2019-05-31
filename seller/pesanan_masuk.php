@@ -5,7 +5,8 @@ $abc = mysqli_query($conn, "SELECT id_seller FROM seller WHERE id_user = '$id_us
 $id_seller = mysqli_fetch_assoc($abc)['id_seller'];
 
 $dataBarang = mysqli_query($conn, "SELECT * FROM order_detail INNER JOIN user ON order_detail.id_customer = user.id_user
-                                                                                INNER JOIN detail_user ON user.id_user = detail_user.id_user");
+                                                                                INNER JOIN detail_user ON user.id_user = detail_user.id_user 
+                                                                                INNER JOIN keranjang ON order_detail.id_keranjang = keranjang.id_keranjang WHERE keranjang.status_produk='checkout'");
 $barangs = [];
 while ($barang = mysqli_fetch_assoc($dataBarang)) {
     $barangs[] = $barang;
@@ -53,8 +54,8 @@ while ($barang = mysqli_fetch_assoc($dataBarang)) {
                             <td><?= $key['tgl_transaksi'] ?></td>
                             <td><?= $key['nama'] ?></td>
                             <td>
-                                <a href="" class="btn btn-sm btn-success">Kirim</a>
-                                <a href="" class="btn btn-sm btn-danger">Batalkan</a>
+                                <a href="kirimbarang.php?id=<?= $key['id_keranjang'] ?>" class="btn btn-sm btn-success">Kirim</a>
+                                <a href="kirimbarang.php?idid=<?= $key['id_keranjang'] ?>" class="btn btn-sm btn-danger">Batalkan</a>
                             </td>
                         </tr>
                         <?php $i++;
