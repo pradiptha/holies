@@ -10,7 +10,7 @@ if (isset($_SESSION['id'])) {
 	$email = $data['email'];
 	$telp = $data['telp'];
 	$i=1;
-	$history = mysqli_query($conn,"SELECT produk.nama_produk,keranjang.quantity,order_detail.tgl_transaksi FROM keranjang INNER JOIN produk USING(id_produk) INNER JOIN order_detail USING(id_keranjang) WHERE order_detail.id_customer='$id'");
+	$history = mysqli_query($conn,"SELECT produk.nama_produk,keranjang.quantity,order_detail.tgl_transaksi,keranjang.id_keranjang,keranjang.status_produk FROM keranjang INNER JOIN produk USING(id_produk) INNER JOIN order_detail USING(id_keranjang) WHERE order_detail.id_customer='$id'");
 	$historysaya = [];
 		while ($row = mysqli_fetch_assoc($history)) {
     	$historysaya[] = $row;
@@ -64,7 +64,7 @@ if (isset($_SESSION['id'])) {
 					</div>
 					<a href="editprofil.php"><i class=" m-1 fas fa-pencil-alt text-success float-right"></i></a>
 				</div>
-				<div class="shadow mb-3 bg-white rounded data-diri p-3">
+				<div class="shadow mb-3 bg-white rounded p-3">
 					<div style="border-bottom: solid grey 1px;">
 						<h6 class="text-success">History Pesanan</h6>
 					</div>
@@ -75,6 +75,7 @@ if (isset($_SESSION['id'])) {
 								<th scope="col">Tanggal Pemesanan</th>
 								<th scope="col">Nama Barang</th>
 								<th scope="col">Jumlah</th>
+								<th scope="col">Terima Barang</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -85,6 +86,12 @@ if (isset($_SESSION['id'])) {
 								<td><?=$key['tgl_transaksi']?></td>
 								<td><?=$key['nama_produk']?></td>
 								<td><?=$key['quantity']?></td>
+								<td><?php if ($key['status_produk']==='checkout'): ?>
+								<a href="terima_barang.php?id=<?=$key['id_keranjang']?>"><button class="btn btn-success">Terima barang</button></a>
+								<?php else: ?>
+									Sudah diterima
+								<?php endif ?>
+								</td>
 							</tr>
 						<?php endforeach ?>
 						</tbody>

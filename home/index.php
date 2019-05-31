@@ -1,8 +1,11 @@
 <?php
 include '../php/config.php';
-$id_user = $_SESSION['id'];
+if ($_SESSION) {
+  $id_user = $_SESSION['id'];
 $sql = mysqli_query($conn, "SELECT * FROM detail_user WHERE id_user = '$id_user' ");
 $data = mysqli_fetch_assoc($sql);
+}
+
 $sql1 = mysqli_query($conn, "SELECT * FROM produk INNER JOIN gmbr_produk USING(id_produk) LIMIT 8");
 $rows = [];
 while ($row = mysqli_fetch_assoc($sql1)) {
